@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B903BF2E1434BE07004CD130 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B903BF2D1434BE07004CD130 /* UIKit.framework */; };
+		B903BF301434BE07004CD130 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B903BF2F1434BE07004CD130 /* Foundation.framework */; };
+		B903BF321434BE07004CD130 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B903BF311434BE07004CD130 /* CoreGraphics.framework */; };
+		B9D162761459F5A4006DF43E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9D162741459F5A4006DF43E /* InfoPlist.strings */; };
+		B9D1627C1459F5C9006DF43E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9D162791459F5C9006DF43E /* MainWindow.xib */; };
+		B9D1627F1459F616006DF43E /* BarButtonItemsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D1627E1459F616006DF43E /* BarButtonItemsAppDelegate.m */; };
+		B9D162871459F647006DF43E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D162841459F647006DF43E /* main.m */; };
+		B9E2C7AC1459FD0C00CF8F24 /* BarButtonItemTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E2C7AA1459FD0C00CF8F24 /* BarButtonItemTestController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B903BF291434BE07004CD130 /* BarButtonItems.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarButtonItems.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B903BF2D1434BE07004CD130 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B903BF2F1434BE07004CD130 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B903BF311434BE07004CD130 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B9D162751459F5A4006DF43E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = BarButtonItems/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		B9D1627A1459F5C9006DF43E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = BarButtonItems/en.lproj/MainWindow.xib; sourceTree = SOURCE_ROOT; };
+		B9D1627D1459F616006DF43E /* BarButtonItemsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarButtonItemsAppDelegate.h; path = BarButtonItems/BarButtonItemsAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		B9D1627E1459F616006DF43E /* BarButtonItemsAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarButtonItemsAppDelegate.m; path = BarButtonItems/BarButtonItemsAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		B9D162801459F647006DF43E /* BarButtonItems-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "BarButtonItems-Info.plist"; path = "BarButtonItems/BarButtonItems-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B9D162811459F647006DF43E /* BarButtonItems-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BarButtonItems-Prefix.pch"; path = "BarButtonItems/BarButtonItems-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		B9D162841459F647006DF43E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = BarButtonItems/main.m; sourceTree = SOURCE_ROOT; };
+		B9E2C7A91459FD0C00CF8F24 /* BarButtonItemTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarButtonItemTestController.h; path = BarButtonItems/BarButtonItemTestController.h; sourceTree = SOURCE_ROOT; };
+		B9E2C7AA1459FD0C00CF8F24 /* BarButtonItemTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarButtonItemTestController.m; path = BarButtonItems/BarButtonItemTestController.m; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B903BF261434BE07004CD130 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B903BF2E1434BE07004CD130 /* UIKit.framework in Frameworks */,
+				B903BF301434BE07004CD130 /* Foundation.framework in Frameworks */,
+				B903BF321434BE07004CD130 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B903BF1E1434BE07004CD130 = {
+			isa = PBXGroup;
+			children = (
+				B903BF331434BE07004CD130 /* BarButtonItems */,
+				B903BF2C1434BE07004CD130 /* Frameworks */,
+				B903BF2A1434BE07004CD130 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B903BF2A1434BE07004CD130 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B903BF291434BE07004CD130 /* BarButtonItems.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B903BF2C1434BE07004CD130 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B903BF2D1434BE07004CD130 /* UIKit.framework */,
+				B903BF2F1434BE07004CD130 /* Foundation.framework */,
+				B903BF311434BE07004CD130 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B903BF331434BE07004CD130 /* BarButtonItems */ = {
+			isa = PBXGroup;
+			children = (
+				B9D1627D1459F616006DF43E /* BarButtonItemsAppDelegate.h */,
+				B9D1627E1459F616006DF43E /* BarButtonItemsAppDelegate.m */,
+				B9E2C7A91459FD0C00CF8F24 /* BarButtonItemTestController.h */,
+				B9E2C7AA1459FD0C00CF8F24 /* BarButtonItemTestController.m */,
+				B9D162791459F5C9006DF43E /* MainWindow.xib */,
+				B903BF341434BE07004CD130 /* Supporting Files */,
+			);
+			name = BarButtonItems;
+			path = RESTOperations;
+			sourceTree = "<group>";
+		};
+		B903BF341434BE07004CD130 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9D162801459F647006DF43E /* BarButtonItems-Info.plist */,
+				B9D162811459F647006DF43E /* BarButtonItems-Prefix.pch */,
+				B9D162841459F647006DF43E /* main.m */,
+				B9D162741459F5A4006DF43E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B903BF281434BE07004CD130 /* BarButtonItems */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B903BF441434BE07004CD130 /* Build configuration list for PBXNativeTarget "BarButtonItems" */;
+			buildPhases = (
+				B903BF251434BE07004CD130 /* Sources */,
+				B903BF261434BE07004CD130 /* Frameworks */,
+				B903BF271434BE07004CD130 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BarButtonItems;
+			productName = RESTOperations;
+			productReference = B903BF291434BE07004CD130 /* BarButtonItems.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B903BF201434BE07004CD130 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Blackjacx & Co";
+			};
+			buildConfigurationList = B903BF231434BE07004CD130 /* Build configuration list for PBXProject "BarButtonItems" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B903BF1E1434BE07004CD130;
+			productRefGroup = B903BF2A1434BE07004CD130 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B903BF281434BE07004CD130 /* BarButtonItems */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B903BF271434BE07004CD130 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9D162761459F5A4006DF43E /* InfoPlist.strings in Resources */,
+				B9D1627C1459F5C9006DF43E /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B903BF251434BE07004CD130 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9D1627F1459F616006DF43E /* BarButtonItemsAppDelegate.m in Sources */,
+				B9D162871459F647006DF43E /* main.m in Sources */,
+				B9E2C7AC1459FD0C00CF8F24 /* BarButtonItemTestController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B9D162741459F5A4006DF43E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9D162751459F5A4006DF43E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B9D162791459F5C9006DF43E /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9D1627A1459F5C9006DF43E /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B903BF421434BE07004CD130 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "../../lib/PrivateCodeLibrary/**";
+			};
+			name = Debug;
+		};
+		B903BF431434BE07004CD130 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "../../lib/PrivateCodeLibrary/**";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B903BF451434BE07004CD130 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BarButtonItems/BarButtonItems-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "BarButtonItems/BarButtonItems-Info.plist";
+				PRODUCT_NAME = BarButtonItems;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B903BF461434BE07004CD130 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BarButtonItems/BarButtonItems-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "BarButtonItems/BarButtonItems-Info.plist";
+				PRODUCT_NAME = BarButtonItems;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B903BF231434BE07004CD130 /* Build configuration list for PBXProject "BarButtonItems" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B903BF421434BE07004CD130 /* Debug */,
+				B903BF431434BE07004CD130 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B903BF441434BE07004CD130 /* Build configuration list for PBXNativeTarget "BarButtonItems" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B903BF451434BE07004CD130 /* Debug */,
+				B903BF461434BE07004CD130 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B903BF201434BE07004CD130 /* Project object */;
+}
