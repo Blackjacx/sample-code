@@ -42,7 +42,19 @@
 	UIView * customView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 30)] autorelease];
 	customView.backgroundColor = [UIColor redColor];
 	
+	
+	/*
+		You can neither influence a bar button item using the appearance 
+		protocol (for all instances) nor using the appearance methods of the 
+		class (for influencing a single instance) because it is setup with a 
+		custom view. 
+	 */
 	UIBarButtonItem * bbItem = [[[UIBarButtonItem alloc] initWithCustomView:customView] autorelease];
+	
+	// --- no effect ...
+	bbItem.tintColor = [UIColor blackColor];
+	
+	
 	self.navigationItem.leftBarButtonItem = bbItem;
 }
 
