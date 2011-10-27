@@ -15,6 +15,7 @@
 		B95736C51455F9700032CBE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B95736BE1455F9700032CBE0 /* main.m */; };
 		B972D5931459EDA0004B9F79 /* RegularExpressionsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B972D5941459EDA0004B9F79 /* RegularExpressionsAppDelegate.m */; };
 		B99C3BF31434BEF5002DE9A7 /* libPrivateCodeLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B99C3BEF1434BEED002DE9A7 /* libPrivateCodeLibrary.a */; };
+		B9E2C7A31459FC3000CF8F24 /* blubb.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9E2C7A11459FC3000CF8F24 /* blubb.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		B95736C11455F9700032CBE0 /* RegularExpressionsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegularExpressionsAppDelegate.h; path = RegularExpressions/RegularExpressionsAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		B972D5941459EDA0004B9F79 /* RegularExpressionsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RegularExpressionsAppDelegate.m; path = RegularExpressions/RegularExpressionsAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		B99C3BE61434BEEC002DE9A7 /* PrivateCodeLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PrivateCodeLibrary.xcodeproj; path = ../../lib/PrivateCodeLibrary/PrivateCodeLibrary.xcodeproj; sourceTree = "<group>"; };
+		B9E2C7A21459FC3000CF8F24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = RegularExpressions/en.lproj/blubb.strings; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				B95736BE1455F9700032CBE0 /* main.m */,
 				B95736BF1455F9700032CBE0 /* RegularExpressions-Info.plist */,
 				B95736C01455F9700032CBE0 /* RegularExpressions-Prefix.pch */,
+				B9E2C7A11459FC3000CF8F24 /* blubb.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			files = (
 				B95736C31455F9700032CBE0 /* InfoPlist.strings in Resources */,
 				B95736C41455F9700032CBE0 /* MainWindow.xib in Resources */,
+				B9E2C7A31459FC3000CF8F24 /* blubb.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +236,14 @@
 				B95736BD1455F9700032CBE0 /* en */,
 			);
 			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		B9E2C7A11459FC3000CF8F24 /* blubb.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9E2C7A21459FC3000CF8F24 /* en */,
+			);
+			name = blubb.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
