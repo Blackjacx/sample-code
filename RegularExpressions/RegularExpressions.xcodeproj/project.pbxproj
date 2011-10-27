@@ -13,8 +13,8 @@
 		B95736C31455F9700032CBE0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B95736BA1455F9700032CBE0 /* InfoPlist.strings */; };
 		B95736C41455F9700032CBE0 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95736BC1455F9700032CBE0 /* MainWindow.xib */; };
 		B95736C51455F9700032CBE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B95736BE1455F9700032CBE0 /* main.m */; };
-		B95736ED145611300032CBE0 /* RegularExpressionsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B95736EF145611300032CBE0 /* RegularExpressionsAppDelegate.m */; };
 		B95736F5145633810032CBE0 /* blubb.strings in Resources */ = {isa = PBXBuildFile; fileRef = B95736F7145633810032CBE0 /* blubb.strings */; };
+		B972D5931459EDA0004B9F79 /* RegularExpressionsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B972D5941459EDA0004B9F79 /* RegularExpressionsAppDelegate.m */; };
 		B99C3BF31434BEF5002DE9A7 /* libPrivateCodeLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B99C3BEF1434BEED002DE9A7 /* libPrivateCodeLibrary.a */; };
 /* End PBXBuildFile section */
 
@@ -46,8 +46,8 @@
 		B95736BF1455F9700032CBE0 /* RegularExpressions-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "RegularExpressions-Info.plist"; path = "RegularExpressions/RegularExpressions-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B95736C01455F9700032CBE0 /* RegularExpressions-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RegularExpressions-Prefix.pch"; path = "RegularExpressions/RegularExpressions-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		B95736C11455F9700032CBE0 /* RegularExpressionsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegularExpressionsAppDelegate.h; path = RegularExpressions/RegularExpressionsAppDelegate.h; sourceTree = SOURCE_ROOT; };
-		B95736EE145611300032CBE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = en; path = en.lproj/RegularExpressionsAppDelegate.m; sourceTree = "<group>"; };
 		B95736F6145633810032CBE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/blubb.strings; sourceTree = "<group>"; };
+		B972D5941459EDA0004B9F79 /* RegularExpressionsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RegularExpressionsAppDelegate.m; path = RegularExpressions/RegularExpressionsAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		B99C3BE61434BEEC002DE9A7 /* PrivateCodeLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PrivateCodeLibrary.xcodeproj; path = ../../lib/PrivateCodeLibrary/PrivateCodeLibrary.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				B95736C11455F9700032CBE0 /* RegularExpressionsAppDelegate.h */,
-				B95736EF145611300032CBE0 /* RegularExpressionsAppDelegate.m */,
+				B972D5941459EDA0004B9F79 /* RegularExpressionsAppDelegate.m */,
 				B95736BC1455F9700032CBE0 /* MainWindow.xib */,
 				B903BF341434BE07004CD130 /* Supporting Files */,
 			);
@@ -215,7 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B95736C51455F9700032CBE0 /* main.m in Sources */,
-				B95736ED145611300032CBE0 /* RegularExpressionsAppDelegate.m in Sources */,
+				B972D5931459EDA0004B9F79 /* RegularExpressionsAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,15 +237,6 @@
 			);
 			name = MainWindow.xib;
 			sourceTree = "<group>";
-		};
-		B95736EF145611300032CBE0 /* RegularExpressionsAppDelegate.m */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B95736EE145611300032CBE0 /* en */,
-			);
-			name = RegularExpressionsAppDelegate.m;
-			path = RegularExpressions;
-			sourceTree = SOURCE_ROOT;
 		};
 		B95736F7145633810032CBE0 /* blubb.strings */ = {
 			isa = PBXVariantGroup;

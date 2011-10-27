@@ -14,18 +14,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	// --- regular expression taken from (read the discussion): 
+	// --- regular expression taken from (still a bit buggy...):
 	// --- http://www.regular-expressions.info/email.html
 	
 	NSString * regexPattern = @"^[A-Z0-9._%+-]+@-Z0-9-]+\.)+[A-Z]{2,4}$";
 	NSString * testString = @"a@gmail.b"; // Won't match
 	NSError * error = nil;
-	BOOL result = [testString matchesRegularExpression:regexPattern forError:&error];
+	NSString * errorDomain= @"blubb";
+	BOOL result = [testString matchesRegularExpression:regexPattern];
 	
 	NSLog(@"Regex: %@ matching string: %@ <result: %d> <error: %@>", 
 			regexPattern, testString, result, error);
 			
-	NSError * err = [NSError errorWithDomain:@"blubb" code:255];
+	NSError * err = [NSError errorWithDomain:errorDomain code:255];
 	NSLog(@"%@", err);
 	
 	[self.window makeKeyAndVisible];

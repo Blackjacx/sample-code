@@ -2,6 +2,10 @@
   blubb.strings
   RegularExpressions
 
-  Created by Stefan Herold on 10/25/11.
+  Created by *** *** on 10/25/11.
   Copyright (c) 2011 Blackjacx & Co. All rights reserved.
 */
+
+"ED_999999"="Unknwon Error";
+
+"ED_255"="Jippeeee";
