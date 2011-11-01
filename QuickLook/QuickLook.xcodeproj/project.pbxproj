@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B9CDE4B514607F0F0005A336 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CDE4B414607F0F0005A336 /* UIKit.framework */; };
+		B9CDE4B714607F0F0005A336 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CDE4B614607F0F0005A336 /* Foundation.framework */; };
+		B9CDE4B914607F0F0005A336 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CDE4B814607F0F0005A336 /* CoreGraphics.framework */; };
+		B9CDE4BF14607F0F0005A336 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9CDE4BD14607F0F0005A336 /* InfoPlist.strings */; };
+		B9CDE4C114607F0F0005A336 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CDE4C014607F0F0005A336 /* main.m */; };
+		B9CDE4C514607F0F0005A336 /* QLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CDE4C414607F0F0005A336 /* QLAppDelegate.m */; };
+		B9CDE4C814607F0F0005A336 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9CDE4C614607F0F0005A336 /* MainStoryboard.storyboard */; };
+		B9CDE4CB14607F0F0005A336 /* QLMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CDE4CA14607F0F0005A336 /* QLMasterViewController.m */; };
+		B9CDE4E61460957E0005A336 /* QLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CDE4E51460957E0005A336 /* QLWebViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B9CDE4B014607F0F0005A336 /* QuickLook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickLook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9CDE4B414607F0F0005A336 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B9CDE4B614607F0F0005A336 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B9CDE4B814607F0F0005A336 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B9CDE4BC14607F0F0005A336 /* QuickLook-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QuickLook-Info.plist"; sourceTree = "<group>"; };
+		B9CDE4BE14607F0F0005A336 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B9CDE4C014607F0F0005A336 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B9CDE4C214607F0F0005A336 /* QuickLook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickLook-Prefix.pch"; sourceTree = "<group>"; };
+		B9CDE4C314607F0F0005A336 /* QLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLAppDelegate.h; sourceTree = "<group>"; };
+		B9CDE4C414607F0F0005A336 /* QLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLAppDelegate.m; sourceTree = "<group>"; };
+		B9CDE4C714607F0F0005A336 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		B9CDE4C914607F0F0005A336 /* QLMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLMasterViewController.h; sourceTree = "<group>"; };
+		B9CDE4CA14607F0F0005A336 /* QLMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLMasterViewController.m; sourceTree = "<group>"; };
+		B9CDE4E41460957E0005A336 /* QLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLWebViewController.h; sourceTree = "<group>"; };
+		B9CDE4E51460957E0005A336 /* QLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLWebViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B9CDE4AD14607F0F0005A336 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9CDE4B514607F0F0005A336 /* UIKit.framework in Frameworks */,
+				B9CDE4B714607F0F0005A336 /* Foundation.framework in Frameworks */,
+				B9CDE4B914607F0F0005A336 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B9CDE4A514607F0F0005A336 = {
+			isa = PBXGroup;
+			children = (
+				B9CDE4BA14607F0F0005A336 /* QuickLook */,
+				B9CDE4B314607F0F0005A336 /* Frameworks */,
+				B9CDE4B114607F0F0005A336 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B9CDE4B114607F0F0005A336 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B9CDE4B014607F0F0005A336 /* QuickLook.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B9CDE4B314607F0F0005A336 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9CDE4B414607F0F0005A336 /* UIKit.framework */,
+				B9CDE4B614607F0F0005A336 /* Foundation.framework */,
+				B9CDE4B814607F0F0005A336 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B9CDE4BA14607F0F0005A336 /* QuickLook */ = {
+			isa = PBXGroup;
+			children = (
+				B9CDE4C314607F0F0005A336 /* QLAppDelegate.h */,
+				B9CDE4C414607F0F0005A336 /* QLAppDelegate.m */,
+				B9CDE4C614607F0F0005A336 /* MainStoryboard.storyboard */,
+				B9CDE4E41460957E0005A336 /* QLWebViewController.h */,
+				B9CDE4E51460957E0005A336 /* QLWebViewController.m */,
+				B9CDE4C914607F0F0005A336 /* QLMasterViewController.h */,
+				B9CDE4CA14607F0F0005A336 /* QLMasterViewController.m */,
+				B9CDE4BB14607F0F0005A336 /* Supporting Files */,
+			);
+			path = QuickLook;
+			sourceTree = "<group>";
+		};
+		B9CDE4BB14607F0F0005A336 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9CDE4BC14607F0F0005A336 /* QuickLook-Info.plist */,
+				B9CDE4BD14607F0F0005A336 /* InfoPlist.strings */,
+				B9CDE4C014607F0F0005A336 /* main.m */,
+				B9CDE4C214607F0F0005A336 /* QuickLook-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B9CDE4AF14607F0F0005A336 /* QuickLook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9CDE4D114607F0F0005A336 /* Build configuration list for PBXNativeTarget "QuickLook" */;
+			buildPhases = (
+				B9CDE4AC14607F0F0005A336 /* Sources */,
+				B9CDE4AD14607F0F0005A336 /* Frameworks */,
+				B9CDE4AE14607F0F0005A336 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuickLook;
+			productName = QuickLook;
+			productReference = B9CDE4B014607F0F0005A336 /* QuickLook.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B9CDE4A714607F0F0005A336 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = B9CDE4AA14607F0F0005A336 /* Build configuration list for PBXProject "QuickLook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B9CDE4A514607F0F0005A336;
+			productRefGroup = B9CDE4B114607F0F0005A336 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B9CDE4AF14607F0F0005A336 /* QuickLook */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B9CDE4AE14607F0F0005A336 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9CDE4BF14607F0F0005A336 /* InfoPlist.strings in Resources */,
+				B9CDE4C814607F0F0005A336 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B9CDE4AC14607F0F0005A336 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9CDE4C114607F0F0005A336 /* main.m in Sources */,
+				B9CDE4C514607F0F0005A336 /* QLAppDelegate.m in Sources */,
+				B9CDE4CB14607F0F0005A336 /* QLMasterViewController.m in Sources */,
+				B9CDE4E61460957E0005A336 /* QLWebViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B9CDE4BD14607F0F0005A336 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9CDE4BE14607F0F0005A336 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B9CDE4C614607F0F0005A336 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9CDE4C714607F0F0005A336 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B9CDE4CF14607F0F0005A336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B9CDE4D014607F0F0005A336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B9CDE4D214607F0F0005A336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QuickLook/QuickLook-Prefix.pch";
+				INFOPLIST_FILE = "QuickLook/QuickLook-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B9CDE4D314607F0F0005A336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QuickLook/QuickLook-Prefix.pch";
+				INFOPLIST_FILE = "QuickLook/QuickLook-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B9CDE4AA14607F0F0005A336 /* Build configuration list for PBXProject "QuickLook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9CDE4CF14607F0F0005A336 /* Debug */,
+				B9CDE4D014607F0F0005A336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9CDE4D114607F0F0005A336 /* Build configuration list for PBXNativeTarget "QuickLook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9CDE4D214607F0F0005A336 /* Debug */,
+				B9CDE4D314607F0F0005A336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B9CDE4A714607F0F0005A336 /* Project object */;
+}
