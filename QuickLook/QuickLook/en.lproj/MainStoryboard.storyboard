@@ -68,15 +68,30 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter new URL here..." minimumFontSize="17" clearButtonMode="whileEditing" id="cqJ-Be-eZF">
-                                <rect key="frame" x="20" y="20" width="280" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" returnKeyType="done"/>
-                                <connections>
-                                    <outlet property="delegate" destination="9G1-MN-Wys" id="oAI-id-xbT"/>
-                                </connections>
-                            </textField>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="K4u-W1-bwY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL..." minimumFontSize="17" clearButtonMode="whileEditing" id="cqJ-Be-eZF">
+                                        <rect key="frame" x="20" y="59" width="280" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="9G1-MN-Wys" id="oAI-id-xbT"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item name..." minimumFontSize="17" id="3FH-c3-28w">
+                                        <rect key="frame" x="20" y="20" width="280" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="9G1-MN-Wys" id="lPf-Od-a9L"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -94,6 +109,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="URLTextField" destination="cqJ-Be-eZF" id="zeC-QX-Bwz"/>
+                        <outlet property="nameTextField" destination="3FH-c3-28w" id="zsE-tD-QZK"/>
                     </connections>
                 </viewController>
             </objects>
@@ -150,6 +166,7 @@
             <relationships>
                 <relationship kind="outlet" name="URLTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="delegate"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="QLMasterViewController" superclassName="UITableViewController">

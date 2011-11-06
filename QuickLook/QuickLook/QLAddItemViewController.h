@@ -12,6 +12,7 @@
 
 @interface QLAddItemViewController : UIViewController <UITextFieldDelegate>
 {
+	IBOutlet UITextField *nameTextField;
 	IBOutlet UITextField *URLTextField;
 }
 @property(weak, nonatomic)IBOutlet id<QLAddItemViewControllerDelegate>delegate;
