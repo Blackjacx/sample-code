@@ -10,10 +10,9 @@
 
 @interface QLWebViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate>
 {
-	UIWebView * webView;
+	@private
+	IBOutlet UIWebView * webView;
 }
 @property(strong, nonatomic)NSURL * URL;
-
-- (id)initWithURLToLoad:(NSURL*)anUrl;
 
 @end

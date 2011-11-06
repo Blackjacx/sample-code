@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9339F5814671369003238FF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B9339F5614671369003238FF /* Icon.png */; };
+		B9339F5914671369003238FF /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9339F5714671369003238FF /* Icon@2x.png */; };
+		B9ACAD031466FFA400C87711 /* QLAddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9ACAD021466FFA400C87711 /* QLAddItemViewController.m */; };
 		B9CDE4B514607F0F0005A336 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CDE4B414607F0F0005A336 /* UIKit.framework */; };
 		B9CDE4B714607F0F0005A336 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CDE4B614607F0F0005A336 /* Foundation.framework */; };
 		B9CDE4B914607F0F0005A336 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CDE4B814607F0F0005A336 /* CoreGraphics.framework */; };
@@ -19,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B9339F5614671369003238FF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		B9339F5714671369003238FF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		B9ACAD011466FFA400C87711 /* QLAddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLAddItemViewController.h; sourceTree = "<group>"; };
+		B9ACAD021466FFA400C87711 /* QLAddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLAddItemViewController.m; sourceTree = "<group>"; };
 		B9CDE4B014607F0F0005A336 /* QuickLook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickLook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9CDE4B414607F0F0005A336 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B9CDE4B614607F0F0005A336 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -83,6 +90,8 @@
 				B9CDE4C314607F0F0005A336 /* QLAppDelegate.h */,
 				B9CDE4C414607F0F0005A336 /* QLAppDelegate.m */,
 				B9CDE4C614607F0F0005A336 /* MainStoryboard.storyboard */,
+				B9ACAD011466FFA400C87711 /* QLAddItemViewController.h */,
+				B9ACAD021466FFA400C87711 /* QLAddItemViewController.m */,
 				B9CDE4E41460957E0005A336 /* QLWebViewController.h */,
 				B9CDE4E51460957E0005A336 /* QLWebViewController.m */,
 				B9CDE4C914607F0F0005A336 /* QLMasterViewController.h */,
@@ -95,6 +104,8 @@
 		B9CDE4BB14607F0F0005A336 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B9339F5614671369003238FF /* Icon.png */,
+				B9339F5714671369003238FF /* Icon@2x.png */,
 				B9CDE4BC14607F0F0005A336 /* QuickLook-Info.plist */,
 				B9CDE4BD14607F0F0005A336 /* InfoPlist.strings */,
 				B9CDE4C014607F0F0005A336 /* main.m */,
@@ -155,6 +166,8 @@
 			files = (
 				B9CDE4BF14607F0F0005A336 /* InfoPlist.strings in Resources */,
 				B9CDE4C814607F0F0005A336 /* MainStoryboard.storyboard in Resources */,
+				B9339F5814671369003238FF /* Icon.png in Resources */,
+				B9339F5914671369003238FF /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +182,7 @@
 				B9CDE4C514607F0F0005A336 /* QLAppDelegate.m in Sources */,
 				B9CDE4CB14607F0F0005A336 /* QLMasterViewController.m in Sources */,
 				B9CDE4E61460957E0005A336 /* QLWebViewController.m in Sources */,
+				B9ACAD031466FFA400C87711 /* QLAddItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +294,7 @@
 				B9CDE4D314607F0F0005A336 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

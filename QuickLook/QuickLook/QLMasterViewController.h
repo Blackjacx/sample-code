@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QLAddItemViewController.h"
 
-@interface QLMasterViewController : UITableViewController <UITextFieldDelegate>
+@interface QLMasterViewController : UITableViewController <
+	QLAddItemViewControllerDelegate>
 {
+	@private
+	
 	NSMutableArray * urlList;
 }
-@property(nonatomic, strong)IBOutlet UITextField * textField;
-
-- (void)setEditMode:(BOOL)makeEditable;
 
 @end

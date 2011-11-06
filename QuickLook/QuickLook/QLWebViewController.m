@@ -11,19 +11,6 @@
 @implementation QLWebViewController
 @synthesize URL;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-	return [self initWithURLToLoad:[NSURL URLWithString:@"http://www.example.com"]];
-}
-
-- (id)initWithURLToLoad:(NSURL*)anUrl {
-	self = [super initWithNibName:nil bundle:nil];
-    if (self) {
-		self.URL = anUrl;
-    }
-    return self;
-}
-
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -41,26 +28,29 @@
 }
 */
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	
-	self->webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
-	self->webView.delegate = self;
-	[self.view addSubview:self->webView];
-	
 	NSURLRequest * request = [NSURLRequest requestWithURL:self.URL];
 	[self->webView loadRequest:request];
-	
-	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] 
-			initWithBarButtonSystemItem:UIBarButtonSystemItemCancel 
-			target:self.parentViewController
-			action:@selector(dismissModalViewControllerAnimated:)];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	
+	// Stop webviewloading when view disappears
+	[self ->webView stopLoading];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -74,10 +64,18 @@
 // MARK: UIWebViewDelegate
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+	
+	if( error.code == NSURLErrorCancelled ) {
+		return;
+	}
+
+	NSString * message = [NSString stringWithFormat:@"The URL could not be "
+	"opened. Maybe you have a typo? Always enter URL's with preceding protocol "
+	"(http://etc.de)!\nError was: %@", error];
+
 	UIAlertView * alert = [[UIAlertView alloc] 
 				initWithTitle:@"Info"
-				message:@"The URL could not be opened. Maybe you have a typo? "
-				"Always enter URL's with preceding protocol (http://etc.de)!"
+				message:message
 				delegate:self
 				cancelButtonTitle:@"OK" 
 				otherButtonTitles:nil];
