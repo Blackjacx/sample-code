@@ -13,14 +13,6 @@
 // MARK: -
 // MARK: Singleton Pattern using GCD
 
-+ (id)allocWithZone:(NSZone *)zone { return [[self sharedInstance] retain]; }
-- (id)copyWithZone:(NSZone *)zone { return self; }
-- (id)autorelease { return self; }
-- (oneway void)release { /* Singletons can't be released */ }
-- (void)dealloc { [super dealloc]; /* should never be called */ }
-- (id)retain { return self; }
-- (NSUInteger)retainCount {	return NSUIntegerMax; /* That's soooo non-zero */ }
-
 + (MySingleton *)sharedInstance
 {
 	static MySingleton * instance = nil;
