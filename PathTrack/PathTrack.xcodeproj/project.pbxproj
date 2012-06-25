@@ -14,13 +14,16 @@
 		B96CE298159900C30069652E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B96CE297159900C30069652E /* main.m */; };
 		B96CE29C159900C30069652E /* PTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B96CE29B159900C30069652E /* PTAppDelegate.m */; };
 		B96CE29F159900C30069652E /* PTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96CE29E159900C30069652E /* PTViewController.m */; };
-		B96CE2A2159900C40069652E /* PTViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B96CE2A0159900C40069652E /* PTViewController_iPhone.xib */; };
-		B96CE2A5159900C40069652E /* PTViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B96CE2A3159900C40069652E /* PTViewController_iPad.xib */; };
 		B96CE2AD159900C40069652E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96CE2AC159900C40069652E /* SenTestingKit.framework */; };
 		B96CE2AE159900C40069652E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96CE28B159900C30069652E /* UIKit.framework */; };
 		B96CE2AF159900C40069652E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96CE28D159900C30069652E /* Foundation.framework */; };
 		B96CE2B7159900C40069652E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B96CE2B5159900C40069652E /* InfoPlist.strings */; };
 		B96CE2BA159900C40069652E /* PathTrackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B96CE2B9159900C40069652E /* PathTrackTests.m */; };
+		B96CE2D1159901350069652E /* libPrivateCodeLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B96CE2CC159900F10069652E /* libPrivateCodeLibrary.a */; };
+		B96CE2D8159901BD0069652E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96CE2D7159901BD0069652E /* CoreLocation.framework */; };
+		B96CE2DB1599027D0069652E /* PTLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96CE2DA1599027D0069652E /* PTLocationController.m */; };
+		B96CE2DD15991EE40069652E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96CE2DC15991EE40069652E /* MessageUI.framework */; };
+		B96CE2DF1599227E0069652E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B96CE2DE1599227E0069652E /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +33,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = B96CE286159900C30069652E;
 			remoteInfo = PathTrack;
+		};
+		B96CE2CB159900F10069652E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B96CE2C3159900F00069652E /* PrivateCodeLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D560ACF9138AF6260010DD6C;
+			remoteInfo = PrivateCodeLibrary;
+		};
+		B96CE2CD159900F10069652E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B96CE2C3159900F00069652E /* PrivateCodeLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D560AD06138AF6260010DD6C;
+			remoteInfo = PrivateCodeLibraryTests;
+		};
+		B96CE2CF1599012C0069652E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B96CE2C3159900F00069652E /* PrivateCodeLibrary.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D560ACF8138AF6250010DD6C;
+			remoteInfo = PrivateCodeLibrary;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -46,14 +70,18 @@
 		B96CE29B159900C30069652E /* PTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTAppDelegate.m; sourceTree = "<group>"; };
 		B96CE29D159900C30069652E /* PTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTViewController.h; sourceTree = "<group>"; };
 		B96CE29E159900C30069652E /* PTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTViewController.m; sourceTree = "<group>"; };
-		B96CE2A1159900C40069652E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PTViewController_iPhone.xib; sourceTree = "<group>"; };
-		B96CE2A4159900C40069652E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PTViewController_iPad.xib; sourceTree = "<group>"; };
 		B96CE2AB159900C40069652E /* PathTrackTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PathTrackTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96CE2AC159900C40069652E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		B96CE2B4159900C40069652E /* PathTrackTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PathTrackTests-Info.plist"; sourceTree = "<group>"; };
 		B96CE2B6159900C40069652E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B96CE2B8159900C40069652E /* PathTrackTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathTrackTests.h; sourceTree = "<group>"; };
 		B96CE2B9159900C40069652E /* PathTrackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PathTrackTests.m; sourceTree = "<group>"; };
+		B96CE2C3159900F00069652E /* PrivateCodeLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PrivateCodeLibrary.xcodeproj; path = ../../lib/PrivateCodeLibrary/PrivateCodeLibrary.xcodeproj; sourceTree = "<group>"; };
+		B96CE2D7159901BD0069652E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B96CE2D91599027D0069652E /* PTLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTLocationController.h; sourceTree = "<group>"; };
+		B96CE2DA1599027D0069652E /* PTLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTLocationController.m; sourceTree = "<group>"; };
+		B96CE2DC15991EE40069652E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		B96CE2DE1599227E0069652E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +89,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B96CE2DD15991EE40069652E /* MessageUI.framework in Frameworks */,
+				B96CE2D8159901BD0069652E /* CoreLocation.framework in Frameworks */,
+				B96CE2D1159901350069652E /* libPrivateCodeLibrary.a in Frameworks */,
 				B96CE28C159900C30069652E /* UIKit.framework in Frameworks */,
 				B96CE28E159900C30069652E /* Foundation.framework in Frameworks */,
 				B96CE290159900C30069652E /* CoreGraphics.framework in Frameworks */,
@@ -83,6 +114,7 @@
 		B96CE27C159900C30069652E = {
 			isa = PBXGroup;
 			children = (
+				B96CE2C3159900F00069652E /* PrivateCodeLibrary.xcodeproj */,
 				B96CE291159900C30069652E /* PathTrack */,
 				B96CE2B2159900C40069652E /* PathTrackTests */,
 				B96CE28A159900C30069652E /* Frameworks */,
@@ -102,6 +134,8 @@
 		B96CE28A159900C30069652E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B96CE2DC15991EE40069652E /* MessageUI.framework */,
+				B96CE2D7159901BD0069652E /* CoreLocation.framework */,
 				B96CE28B159900C30069652E /* UIKit.framework */,
 				B96CE28D159900C30069652E /* Foundation.framework */,
 				B96CE28F159900C30069652E /* CoreGraphics.framework */,
@@ -117,8 +151,8 @@
 				B96CE29B159900C30069652E /* PTAppDelegate.m */,
 				B96CE29D159900C30069652E /* PTViewController.h */,
 				B96CE29E159900C30069652E /* PTViewController.m */,
-				B96CE2A0159900C40069652E /* PTViewController_iPhone.xib */,
-				B96CE2A3159900C40069652E /* PTViewController_iPad.xib */,
+				B96CE2D91599027D0069652E /* PTLocationController.h */,
+				B96CE2DA1599027D0069652E /* PTLocationController.m */,
 				B96CE292159900C30069652E /* Supporting Files */,
 			);
 			path = PathTrack;
@@ -131,6 +165,7 @@
 				B96CE294159900C30069652E /* InfoPlist.strings */,
 				B96CE297159900C30069652E /* main.m */,
 				B96CE299159900C30069652E /* PathTrack-Prefix.pch */,
+				B96CE2DE1599227E0069652E /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -154,6 +189,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B96CE2C4159900F00069652E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B96CE2CC159900F10069652E /* libPrivateCodeLibrary.a */,
+				B96CE2CE159900F10069652E /* PrivateCodeLibraryTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,6 +212,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B96CE2D01599012C0069652E /* PBXTargetDependency */,
 			);
 			name = PathTrack;
 			productName = PathTrack;
@@ -213,6 +258,12 @@
 			mainGroup = B96CE27C159900C30069652E;
 			productRefGroup = B96CE288159900C30069652E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B96CE2C4159900F00069652E /* Products */;
+					ProjectRef = B96CE2C3159900F00069652E /* PrivateCodeLibrary.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B96CE286159900C30069652E /* PathTrack */,
@@ -221,14 +272,30 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		B96CE2CC159900F10069652E /* libPrivateCodeLibrary.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPrivateCodeLibrary.a;
+			remoteRef = B96CE2CB159900F10069652E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B96CE2CE159900F10069652E /* PrivateCodeLibraryTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PrivateCodeLibraryTests.octest;
+			remoteRef = B96CE2CD159900F10069652E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		B96CE285159900C30069652E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B96CE296159900C30069652E /* InfoPlist.strings in Resources */,
-				B96CE2A2159900C40069652E /* PTViewController_iPhone.xib in Resources */,
-				B96CE2A5159900C40069652E /* PTViewController_iPad.xib in Resources */,
+				B96CE2DF1599227E0069652E /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +333,7 @@
 				B96CE298159900C30069652E /* main.m in Sources */,
 				B96CE29C159900C30069652E /* PTAppDelegate.m in Sources */,
 				B96CE29F159900C30069652E /* PTViewController.m in Sources */,
+				B96CE2DB1599027D0069652E /* PTLocationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +353,11 @@
 			target = B96CE286159900C30069652E /* PathTrack */;
 			targetProxy = B96CE2B0159900C40069652E /* PBXContainerItemProxy */;
 		};
+		B96CE2D01599012C0069652E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PrivateCodeLibrary;
+			targetProxy = B96CE2CF1599012C0069652E /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -294,22 +367,6 @@
 				B96CE295159900C30069652E /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		B96CE2A0159900C40069652E /* PTViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B96CE2A1159900C40069652E /* en */,
-			);
-			name = PTViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		B96CE2A3159900C40069652E /* PTViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B96CE2A4159900C40069652E /* en */,
-			);
-			name = PTViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 		B96CE2B5159900C40069652E /* InfoPlist.strings */ = {
@@ -330,6 +387,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -343,9 +401,11 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "../../lib/PrivateCodeLibrary/**";
 			};
 			name = Debug;
 		};
@@ -356,16 +416,19 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "../../lib/PrivateCodeLibrary/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

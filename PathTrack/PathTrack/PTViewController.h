@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PTLocationController.h"
 
-@interface PTViewController : UIViewController
+@interface PTViewController : UIViewController <PTLocationControllerDelegate, MFMailComposeViewControllerDelegate>
 
 @end
