@@ -11,6 +11,9 @@
 #import "PTViewController.h"
 
 @implementation PTAppDelegate
+{
+	UIBackgroundTaskIdentifier bgTask;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -30,13 +33,36 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-	// Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-	// If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+//    bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
+//        // Clean up any unfinished task business by marking where you.
+//        // stopped or ending the task outright.
+//        [application endBackgroundTask:bgTask];
+//        bgTask = UIBackgroundTaskInvalid;
+//    }];
+//	
+//    // Start the long-running task and return immediately.
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//		
+//		BOOL done = NO;
+//		
+//		do {
+//			@autoreleasepool {
+//				
+//				[[NSRunLoop mainRunLoop] runUntilDate:[[NSDate alloc] initWithTimeIntervalSinceNow:0.1]];
+//				NSLog(@"BG-Time: %f", [[UIApplication sharedApplication] backgroundTimeRemaining]);
+//			}
+//			
+//		} while ( bgTask != UIBackgroundTaskInvalid );
+//		
+//        [application endBackgroundTask:bgTask];
+//        bgTask = UIBackgroundTaskInvalid;
+//    });
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-	// Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+//	[application endBackgroundTask:bgTask];
+//	bgTask = UIBackgroundTaskInvalid;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -46,7 +72,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 @end

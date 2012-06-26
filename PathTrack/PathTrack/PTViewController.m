@@ -72,7 +72,7 @@
 	[dateFormatter setDateStyle:NSDateFormatterMediumStyle];
 	[dateFormatter setLocale:deLocale];
 	
-	NSString * archiveFileName = [[dateFormatter stringFromDate:[NSDate date]] stringByAppendingString:@".txt"];
+	NSString * archiveFileName = [dateFormatter stringFromDate:[NSDate date]];
 	NSString * pathToTmpDir = NSTemporaryDirectory();
 	NSString * completePath = [pathToTmpDir stringByAppendingPathComponent:archiveFileName];
 	
@@ -89,12 +89,11 @@
 	NSMutableString * stringLocations = [[NSMutableString alloc] init];
 	for( CLLocation * location in obj ) {
 		@autoreleasepool {
-			CLLocationDistance altitude = location.altitude * 10;
+			CLLocationDistance altitude = location.altitude * 3;
 			[stringLocations appendFormat:@"\n%.15f,%.15f,%d",
 								   location.coordinate.longitude, location.coordinate.latitude, (NSInteger)altitude];
 		}
 	}
-	NSLog(@"%@", stringLocations);
 	
 	MFMailComposeViewController * composer = [[MFMailComposeViewController alloc] init];
 	[composer setSubject:[NSString stringWithFormat:@"New GPS-Track Data Available From: %@", archiveFileName]];

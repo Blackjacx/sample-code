@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9408653159A704900F83F47 /* XMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B9408652159A704900F83F47 /* XMLWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B9408656159A709300F83F47 /* PTKMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B9408655159A709300F83F47 /* PTKMLWriter.m */; };
 		B96CE28C159900C30069652E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96CE28B159900C30069652E /* UIKit.framework */; };
 		B96CE28E159900C30069652E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96CE28D159900C30069652E /* Foundation.framework */; };
 		B96CE290159900C30069652E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96CE28F159900C30069652E /* CoreGraphics.framework */; };
@@ -58,6 +60,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B9408651159A704900F83F47 /* XMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLWriter.h; path = lib/XML/XMLWriter.h; sourceTree = SOURCE_ROOT; };
+		B9408652159A704900F83F47 /* XMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLWriter.m; path = lib/XML/XMLWriter.m; sourceTree = SOURCE_ROOT; };
+		B9408654159A709300F83F47 /* PTKMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKMLWriter.h; sourceTree = "<group>"; };
+		B9408655159A709300F83F47 /* PTKMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKMLWriter.m; sourceTree = "<group>"; };
 		B96CE287159900C30069652E /* PathTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96CE28B159900C30069652E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B96CE28D159900C30069652E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -111,6 +117,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B9408650159A703C00F83F47 /* XML */ = {
+			isa = PBXGroup;
+			children = (
+				B9408651159A704900F83F47 /* XMLWriter.h */,
+				B9408652159A704900F83F47 /* XMLWriter.m */,
+			);
+			name = XML;
+			sourceTree = "<group>";
+		};
 		B96CE27C159900C30069652E = {
 			isa = PBXGroup;
 			children = (
@@ -147,12 +162,15 @@
 		B96CE291159900C30069652E /* PathTrack */ = {
 			isa = PBXGroup;
 			children = (
+				B9408650159A703C00F83F47 /* XML */,
 				B96CE29A159900C30069652E /* PTAppDelegate.h */,
 				B96CE29B159900C30069652E /* PTAppDelegate.m */,
 				B96CE29D159900C30069652E /* PTViewController.h */,
 				B96CE29E159900C30069652E /* PTViewController.m */,
 				B96CE2D91599027D0069652E /* PTLocationController.h */,
 				B96CE2DA1599027D0069652E /* PTLocationController.m */,
+				B9408654159A709300F83F47 /* PTKMLWriter.h */,
+				B9408655159A709300F83F47 /* PTKMLWriter.m */,
 				B96CE292159900C30069652E /* Supporting Files */,
 			);
 			path = PathTrack;
@@ -334,6 +352,8 @@
 				B96CE29C159900C30069652E /* PTAppDelegate.m in Sources */,
 				B96CE29F159900C30069652E /* PTViewController.m in Sources */,
 				B96CE2DB1599027D0069652E /* PTLocationController.m in Sources */,
+				B9408653159A704900F83F47 /* XMLWriter.m in Sources */,
+				B9408656159A709300F83F47 /* PTKMLWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +528,7 @@
 				B96CE2BF159900C40069652E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B96CE2C0159900C40069652E /* Build configuration list for PBXNativeTarget "PathTrackTests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +537,7 @@
 				B96CE2C2159900C40069652E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
