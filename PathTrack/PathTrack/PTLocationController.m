@@ -8,12 +8,16 @@
 
 #import "PTLocationController.h"
 
+@interface PTLocationController ()
+
+@property(nonatomic, strong) CLLocationManager * locationManager;
+@property(nonatomic, copy) NSDictionary * locationAccuracyNamesForAccuracies;
+@property(nonatomic, assign) BOOL locationServiceStarted;
+@property(nonatomic, assign) BOOL significantLocationServiceStarted;
+
+@end
+
 @implementation PTLocationController
-{
-	CLLocationManager * _locationManager;
-	NSDictionary * _locationAccuracyNamesForAccuracies;
-	
-}
 
 - (id) init
 {
@@ -21,7 +25,7 @@
 	
     if ( self ) {
 		
-		_locationAccuracyNamesForAccuracies = @{
+		self.locationAccuracyNamesForAccuracies = @{
 			@(kCLLocationAccuracyBestForNavigation) :
 				NSLocalizedString(@"PTLocationControllerAccuracyBestForNavigation", @""),
 			@(kCLLocationAccuracyBest) :
@@ -35,15 +39,98 @@
 			@(kCLLocationAccuracyThreeKilometers) :
 				NSLocalizedString(@"PTLocationControllerAccuracyThreeKilometers", @"")};
 		
-        _locationManager = [[CLLocationManager alloc] init];
-        _locationManager.delegate = self; // send loc updates to myself
-		_locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+		self.powerSavingEnabled = NO;
 		
+		[self createLocationManager];
+		
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(applicationDidDidEnterBackground:)
+													 name:UIApplicationDidEnterBackgroundNotification
+												   object:nil];
+		
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(applicationWillEnterForeground:)
+													 name:UIApplicationWillEnterForegroundNotification
+												   object:nil];
+		
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(applicationDidFinishLaunching:)
+													 name:UIApplicationDidFinishLaunchingNotification
+												   object:nil];
     }
     return self;
 }
 
-- (void)locationManager:(CLLocationManager *)manager 
+- (void)dealloc {
+	
+	self.delegate = nil;
+	
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification*)note {
+	
+	NSDictionary * userInfo = note.userInfo;
+	
+	NSLog(@"%@\nOptions: %@", NSStringFromSelector(_cmd), userInfo);
+	
+	if( [userInfo objectForKey:UIApplicationLaunchOptionsLocationKey] ) {
+		
+		BOOL updateServiceStartedBefore = self.locationServiceStarted;
+//		BOOL significantUpdateServiceStartedBefore = self.significantLocationServiceStarted;
+		
+		// Initialize a new location Manager object here
+		[self stopAllLocationServices];
+		[self createLocationManager];
+		
+		if( updateServiceStartedBefore ) {
+			[self startLocationDelivery];
+		}
+	}
+}
+
+- (void)createLocationManager {
+	
+	[self stopAllLocationServices];
+
+	// Clean up old manager
+	self.locationManager.delegate = nil;
+	
+	// Initiate new manager
+	self.locationManager = [[CLLocationManager alloc] init];
+	self.locationManager.delegate = self; // send loc updates to myself
+	
+	self.currentAccuracy = kCLLocationAccuracyBest;
+}
+
+// MARK:
+// MARK: Setter: Accuracy Property
+
+- (void)setCurrentAccuracy:(CLLocationAccuracy)currentAccuracy {
+
+	_currentAccuracy = currentAccuracy;
+	self.locationManager.desiredAccuracy = currentAccuracy;
+}
+
+
+- (void)applicationDidDidEnterBackground:(NSNotification*)note {
+	
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	
+	if( self.powerSavingEnabled ) {
+		[self stopLocationDelivery];
+		[self startSignificantLocationDelivery];
+	}
+}
+
+- (void)applicationWillEnterForeground:(NSNotification*)note {
+	
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	[self stopSignificantLocationDelivery];
+	[self startLocationDelivery];
+}
+
+- (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
@@ -67,14 +154,38 @@
 }
 
 - (void)startLocationDelivery {
-	[_locationManager startUpdatingLocation];
+	if( self.locationServiceStarted == NO ) {
+		[self.locationManager startUpdatingLocation];
+	}
+	self.locationServiceStarted = YES;
 }
 
 - (void)stopLocationDelivery {
-	[_locationManager stopUpdatingLocation];
+	if( self.locationServiceStarted == YES ) {
+		[self.locationManager stopUpdatingLocation];
+	}
+	self.locationServiceStarted = NO;
 }
 
+- (void)startSignificantLocationDelivery {
+	if( self.significantLocationServiceStarted == NO ) {
+		[self.locationManager startMonitoringSignificantLocationChanges];
+	}
+	self.significantLocationServiceStarted = YES;
+}
 
+- (void)stopSignificantLocationDelivery {
+	if( self.significantLocationServiceStarted == YES ) {
+		[self.locationManager stopMonitoringSignificantLocationChanges];
+	}
+	self.significantLocationServiceStarted = NO;
+}
+
+- (void)stopAllLocationServices {
+	
+	[self stopLocationDelivery];
+	[self stopSignificantLocationDelivery];
+}
 
 - (BOOL)isLocationServiceAvailable {
 	BOOL isServiceAvailable = [CLLocationManager locationServicesEnabled];

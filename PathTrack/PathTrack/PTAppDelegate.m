@@ -12,16 +12,22 @@
 
 @implementation PTAppDelegate
 {
-	UIBackgroundTaskIdentifier bgTask;
+	UIBackgroundTaskIdentifier _bgTask;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	if( [launchOptions objectForKey:UIApplicationLaunchOptionsLocationKey] ) {
+		
+		return YES;
+	}
+	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 	self.viewController = [[PTViewController alloc] init];
 	self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+
     return YES;
 }
 
@@ -33,11 +39,11 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-//    bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
+//    _bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
 //        // Clean up any unfinished task business by marking where you.
 //        // stopped or ending the task outright.
 //        [application endBackgroundTask:bgTask];
-//        bgTask = UIBackgroundTaskInvalid;
+//        _bgTask = UIBackgroundTaskInvalid;
 //    }];
 //	
 //    // Start the long-running task and return immediately.
@@ -52,15 +58,15 @@
 //				NSLog(@"BG-Time: %f", [[UIApplication sharedApplication] backgroundTimeRemaining]);
 //			}
 //			
-//		} while ( bgTask != UIBackgroundTaskInvalid );
+//		} while ( _bgTask != UIBackgroundTaskInvalid );
 //		
 //        [application endBackgroundTask:bgTask];
-//        bgTask = UIBackgroundTaskInvalid;
+//        _bgTask = UIBackgroundTaskInvalid;
 //    });
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
-{
+{	
 //	[application endBackgroundTask:bgTask];
 //	bgTask = UIBackgroundTaskInvalid;
 }

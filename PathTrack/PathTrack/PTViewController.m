@@ -40,6 +40,7 @@
 	
 	_locationController = [[PTLocationController alloc] init];
 	_locationController.delegate = self;
+	_locationController.powerSavingEnabled = YES;
 	[_locationController startLocationDelivery];
 }
 

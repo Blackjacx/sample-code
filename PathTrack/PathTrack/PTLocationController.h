@@ -13,11 +13,16 @@
 @interface PTLocationController : NSObject <CLLocationManagerDelegate>
 
 @property(nonatomic, strong) id<PTLocationControllerDelegate> delegate;
+@property(nonatomic, assign) CLLocationAccuracy currentAccuracy;
+@property(nonatomic, assign) BOOL powerSavingEnabled;
 
 - (void)startLocationDelivery;
 - (void)stopLocationDelivery;
 - (BOOL)isLocationServiceAvailable;
-	
+
+- (void)startSignificantLocationDelivery;
+- (void)stopSignificantLocationDelivery;
+
 @end
 
 
