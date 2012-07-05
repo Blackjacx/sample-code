@@ -24,7 +24,7 @@
 {
     [super viewDidLoad];
 	CGFloat W = self.view.bounds.size.width;
-	CGFloat H = self.view.bounds.size.height;
+//	CGFloat H = self.view.bounds.size.height;
 	
 	_locationLabel = [[UILabel alloc] initWithFrame:self.view.bounds];
 	_locationLabel.numberOfLines = 0;
@@ -39,8 +39,8 @@
 	_collectedLocationList = [[NSMutableArray alloc] init];
 	
 	_locationController = [[PTLocationController alloc] init];
-	_locationController.delegate = self;
 	_locationController.powerSavingEnabled = YES;
+	_locationController.delegate = self;
 	[_locationController startLocationDelivery];
 }
 

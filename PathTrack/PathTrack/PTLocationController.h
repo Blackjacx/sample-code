@@ -14,14 +14,22 @@
 
 @property(nonatomic, strong) id<PTLocationControllerDelegate> delegate;
 @property(nonatomic, assign) CLLocationAccuracy currentAccuracy;
-@property(nonatomic, assign) BOOL powerSavingEnabled;
+@property(nonatomic, assign, getter = isPowerSavingEnabled) BOOL powerSavingEnabled;
+
+@property(nonatomic, readonly) NSString * currentAccuracyAsString;
+
+// MARK:
+// MARK: Location Controller Interaction
 
 - (void)startLocationDelivery;
 - (void)stopLocationDelivery;
 - (BOOL)isLocationServiceAvailable;
 
-- (void)startSignificantLocationDelivery;
-- (void)stopSignificantLocationDelivery;
+// MARK:
+// MARK: Increasing / Decreasing Accuracy
+
+- (void)decreaseAccuracyByValue:(NSUInteger)aValue;
+- (void)increaseAccuracyByValue:(NSUInteger)aValue;
 
 @end
 

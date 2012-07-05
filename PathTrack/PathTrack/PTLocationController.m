@@ -11,13 +11,16 @@
 @interface PTLocationController ()
 
 @property(nonatomic, strong) CLLocationManager * locationManager;
-@property(nonatomic, copy) NSDictionary * locationAccuracyNamesForAccuracies;
+@property(nonatomic, assign) CLLocationAccuracy accuracyBeforeAppDidEnterBackgroundBackground;
+@property(nonatomic, copy) NSArray * locationAccuracies;
 @property(nonatomic, assign) BOOL locationServiceStarted;
-@property(nonatomic, assign) BOOL significantLocationServiceStarted;
 
 @end
 
 @implementation PTLocationController
+
+// MARK:
+// MARK: Location Controller Lifecycle
 
 - (id) init
 {
@@ -25,21 +28,16 @@
 	
     if ( self ) {
 		
-		self.locationAccuracyNamesForAccuracies = @{
-			@(kCLLocationAccuracyBestForNavigation) :
-				NSLocalizedString(@"PTLocationControllerAccuracyBestForNavigation", @""),
-			@(kCLLocationAccuracyBest) :
-				NSLocalizedString(@"PTLocationControllerAccuracyBest", @""),
-			@(kCLLocationAccuracyNearestTenMeters) :
-				NSLocalizedString(@"PTLocationControllerAccuracyNearestTenMeters", @""),
-			@(kCLLocationAccuracyHundredMeters) :
-				NSLocalizedString(@"PTLocationControllerAccuracyHundretMeters", @""),
-			@(kCLLocationAccuracyKilometer) :
-				NSLocalizedString(@"PTLocationControllerAccuracyKilometer", @""),
-			@(kCLLocationAccuracyThreeKilometers) :
-				NSLocalizedString(@"PTLocationControllerAccuracyThreeKilometers", @"")};
-		
 		self.powerSavingEnabled = NO;
+		
+		self.locationAccuracies = [[NSArray alloc] initWithObjects:
+								   @(kCLLocationAccuracyThreeKilometers),
+								   @(kCLLocationAccuracyKilometer),
+								   @(kCLLocationAccuracyHundredMeters),
+								   @(kCLLocationAccuracyNearestTenMeters),
+								   @(kCLLocationAccuracyBest),
+								   @(kCLLocationAccuracyBestForNavigation),
+								   nil];
 		
 		[self createLocationManager];
 		
@@ -52,11 +50,6 @@
 												 selector:@selector(applicationWillEnterForeground:)
 													 name:UIApplicationWillEnterForegroundNotification
 												   object:nil];
-		
-		[[NSNotificationCenter defaultCenter] addObserver:self
-												 selector:@selector(applicationDidFinishLaunching:)
-													 name:UIApplicationDidFinishLaunchingNotification
-												   object:nil];
     }
     return self;
 }
@@ -66,27 +59,6 @@
 	self.delegate = nil;
 	
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-- (void)applicationDidFinishLaunching:(NSNotification*)note {
-	
-	NSDictionary * userInfo = note.userInfo;
-	
-	NSLog(@"%@\nOptions: %@", NSStringFromSelector(_cmd), userInfo);
-	
-	if( [userInfo objectForKey:UIApplicationLaunchOptionsLocationKey] ) {
-		
-		BOOL updateServiceStartedBefore = self.locationServiceStarted;
-//		BOOL significantUpdateServiceStartedBefore = self.significantLocationServiceStarted;
-		
-		// Initialize a new location Manager object here
-		[self stopAllLocationServices];
-		[self createLocationManager];
-		
-		if( updateServiceStartedBefore ) {
-			[self startLocationDelivery];
-		}
-	}
 }
 
 - (void)createLocationManager {
@@ -112,28 +84,35 @@
 	self.locationManager.desiredAccuracy = currentAccuracy;
 }
 
+// MARK:
+// MARK: Application Delegate Notifications
 
 - (void)applicationDidDidEnterBackground:(NSNotification*)note {
 	
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
 	if( self.powerSavingEnabled ) {
-		[self stopLocationDelivery];
-		[self startSignificantLocationDelivery];
+		self.accuracyBeforeAppDidEnterBackgroundBackground = self.currentAccuracy;
+		[self decreaseAccuracyByValue:1];
 	}
 }
 
 - (void)applicationWillEnterForeground:(NSNotification*)note {
 	
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-	[self stopSignificantLocationDelivery];
-	[self startLocationDelivery];
+	
+	self.currentAccuracy = self.accuracyBeforeAppDidEnterBackgroundBackground;
 }
+
+// MARK:
+// MARK: CLLocationManager Delegate
 
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
+	NSLog(@"Location: %@", newLocation);
+	
 	SEL selector = @selector(locationController:didUpdateToLocation:fromLocation:);
 	if( [self.delegate respondsToSelector:selector] ) {
 		dispatch_async(dispatch_get_main_queue(), ^{
@@ -153,6 +132,9 @@
 	}
 }
 
+// MARK:
+// MARK: Location Controller Interaction
+
 - (void)startLocationDelivery {
 	if( self.locationServiceStarted == NO ) {
 		[self.locationManager startUpdatingLocation];
@@ -167,30 +149,58 @@
 	self.locationServiceStarted = NO;
 }
 
-- (void)startSignificantLocationDelivery {
-	if( self.significantLocationServiceStarted == NO ) {
-		[self.locationManager startMonitoringSignificantLocationChanges];
-	}
-	self.significantLocationServiceStarted = YES;
-}
-
-- (void)stopSignificantLocationDelivery {
-	if( self.significantLocationServiceStarted == YES ) {
-		[self.locationManager stopMonitoringSignificantLocationChanges];
-	}
-	self.significantLocationServiceStarted = NO;
-}
-
 - (void)stopAllLocationServices {
 	
 	[self stopLocationDelivery];
-	[self stopSignificantLocationDelivery];
 }
 
 - (BOOL)isLocationServiceAvailable {
 	BOOL isServiceAvailable = [CLLocationManager locationServicesEnabled];
 	BOOL isAppAuthorized = [CLLocationManager authorizationStatus];
 	return isServiceAvailable && isAppAuthorized;
+}
+
+// MARK:
+// MARK: Display Accuracy As String
+
+- (NSString *)stringForAccuracy:(CLLocationAccuracy)accuracy {
+	if( accuracy == kCLLocationAccuracyBestForNavigation )
+		return NSLocalizedString(@"PTLocationControllerAccuracyBestForNavigation", @"");
+	else if( accuracy == kCLLocationAccuracyBest )
+		return NSLocalizedString(@"PTLocationControllerAccuracyBest", @"");
+	else if( accuracy == kCLLocationAccuracyNearestTenMeters )
+		return NSLocalizedString(@"PTLocationControllerAccuracyNearestTenMeters", @"");
+	else if( accuracy == kCLLocationAccuracyHundredMeters )
+		return NSLocalizedString(@"PTLocationControllerAccuracyHundretMeters", @"");
+	else if( accuracy == kCLLocationAccuracyKilometer )
+		return NSLocalizedString(@"PTLocationControllerAccuracyKilometer", @"");
+	else if( accuracy == kCLLocationAccuracyThreeKilometers )
+		return NSLocalizedString(@"PTLocationControllerAccuracyThreeKilometers", @"");
+	else
+		return NSLocalizedString(@"PTLocationControllerAccuracyUnknown", @"");
+}
+
+- (NSString *)currentAccuracyAsString {
+	return [self stringForAccuracy:self.currentAccuracy];
+}
+
+// MARK:
+// MARK: Increasing / Decreasing Accuracy
+
+- (void)decreaseAccuracyByValue:(NSUInteger)aValue {
+	NSInteger currentAccuracyIndex = [self.locationAccuracies indexOfObject:@(self.currentAccuracy)];
+	NSInteger newAccuracyIndex = MAX( 0, currentAccuracyIndex-aValue );
+
+	if( currentAccuracyIndex != newAccuracyIndex )
+		self.currentAccuracy = [[self.locationAccuracies objectAtIndex:newAccuracyIndex] doubleValue];
+}
+
+- (void)increaseAccuracyByValue:(NSUInteger)aValue {
+	NSInteger currentAccuracyIndex = [self.locationAccuracies indexOfObject:@(self.currentAccuracy)];
+	NSInteger newAccuracyIndex = MIN( [self.locationAccuracies count]-1, currentAccuracyIndex+aValue );
+	
+	if( currentAccuracyIndex != newAccuracyIndex )
+		self.currentAccuracy = [[self.locationAccuracies objectAtIndex:newAccuracyIndex] doubleValue];
 }
 
 @end
