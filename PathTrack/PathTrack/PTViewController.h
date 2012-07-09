@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "PTLocationController.h"
 
-@interface PTViewController : UIViewController <PTLocationControllerDelegate, MFMailComposeViewControllerDelegate>
+@interface PTViewController : UIViewController
+<
+	PTLocationControllerDelegate,
+	MFMailComposeViewControllerDelegate,
+	UIActionSheetDelegate
+>
 
 @end

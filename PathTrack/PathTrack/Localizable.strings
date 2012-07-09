@@ -6,4 +6,18 @@
   Copyright (c) 2012 Blackjacx. All rights reserved.
 */
 
-"PTViewControllerStopButtonTitle"="Stop";
+"PTStringCancel"="Cancel";
+
+"PTLocationControllerAccuracyBestForNavigation"="Best For Navigation";
+"PTLocationControllerAccuracyBest"="Best";
+"PTLocationControllerAccuracyNearestTenMeters"="Nearest 10m";
+"PTLocationControllerAccuracyHundretMeters"="100m";
+"PTLocationControllerAccuracyKilometer"="1km";
+"PTLocationControllerAccuracyThreeKilometers"="3km";
+"PTLocationControllerAccuracyUnknown"="Unknown";
+
+"PTViewControllerActionSheetButtonTitleLocalizablaKeyIncreaseAccuracy"="Increase Accuracy";
+"PTViewControllerActionSheetButtonTitleLocalizablaKeyDecreaseAccuracy"="Decrease Accuracy";
+"PTViewControllerActionSheetButtonTitleLocalizablaKeyStop"="Stop";
+
+"PTViewControllerActionSheetTitle"="Choose an Option";

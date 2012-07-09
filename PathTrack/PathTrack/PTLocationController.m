@@ -40,7 +40,7 @@
 								   nil];
 		
 		[self createLocationManager];
-		
+
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(applicationDidDidEnterBackground:)
 													 name:UIApplicationDidEnterBackgroundNotification
@@ -189,7 +189,7 @@
 
 - (void)decreaseAccuracyByValue:(NSUInteger)aValue {
 	NSInteger currentAccuracyIndex = [self.locationAccuracies indexOfObject:@(self.currentAccuracy)];
-	NSInteger newAccuracyIndex = MAX( 0, currentAccuracyIndex-aValue );
+	NSInteger newAccuracyIndex = MAX( 0, currentAccuracyIndex-(NSInteger)aValue );
 
 	if( currentAccuracyIndex != newAccuracyIndex )
 		self.currentAccuracy = [[self.locationAccuracies objectAtIndex:newAccuracyIndex] doubleValue];
@@ -197,7 +197,7 @@
 
 - (void)increaseAccuracyByValue:(NSUInteger)aValue {
 	NSInteger currentAccuracyIndex = [self.locationAccuracies indexOfObject:@(self.currentAccuracy)];
-	NSInteger newAccuracyIndex = MIN( [self.locationAccuracies count]-1, currentAccuracyIndex+aValue );
+	NSInteger newAccuracyIndex = MIN( [self.locationAccuracies count]-1, currentAccuracyIndex+(NSInteger)aValue );
 	
 	if( currentAccuracyIndex != newAccuracyIndex )
 		self.currentAccuracy = [[self.locationAccuracies objectAtIndex:newAccuracyIndex] doubleValue];

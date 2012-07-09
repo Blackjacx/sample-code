@@ -6,6 +6,10 @@
 //  Copyright (c) 2012 Blackjacx. All rights reserved.
 //
 
+/*!
+ @TODO * Save chunks of X received coordinates immediately to disk instead of to memory to prevent losses due to app crashes.
+ */
+
 #import "PTAppDelegate.h"
 
 #import "PTViewController.h"
@@ -23,9 +27,11 @@
 	}
 	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-	self.viewController = [[PTViewController alloc] init];
-	self.window.rootViewController = self.viewController;
+	_window.backgroundColor = [UIColor whiteColor];
+	self.rootController = [[PTViewController alloc] init];
+	self.rootController.title = NSLocalizedString(@"PTViewControllerTitle", @"");
+	UINavigationController * rootNavigationController = [[UINavigationController alloc] initWithRootViewController:self.rootController];
+	self.window.rootViewController = rootNavigationController;
     [self.window makeKeyAndVisible];
 
     return YES;
