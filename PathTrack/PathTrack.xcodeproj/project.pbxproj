@@ -40,6 +40,10 @@
 		B96CE2DB1599027D0069652E /* PTLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96CE2DA1599027D0069652E /* PTLocationController.m */; };
 		B96CE2DD15991EE40069652E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96CE2DC15991EE40069652E /* MessageUI.framework */; };
 		B96CE2DF1599227E0069652E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B96CE2DE1599227E0069652E /* Localizable.strings */; };
+		B986F33C15ACC12B00DD2583 /* PTFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B986F33B15ACC12B00DD2583 /* PTFileManager.m */; };
+		B986F33F15ACC6C200DD2583 /* PTFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B986F33B15ACC12B00DD2583 /* PTFileManager.m */; };
+		B986F34215ACCAA000DD2583 /* PTTrackRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = B986F34115ACCAA000DD2583 /* PTTrackRecord.m */; };
+		B986F34315ACCB4E00DD2583 /* PTTrackRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = B986F34115ACCAA000DD2583 /* PTTrackRecord.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +115,10 @@
 		B96CE2DA1599027D0069652E /* PTLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTLocationController.m; sourceTree = "<group>"; };
 		B96CE2DC15991EE40069652E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		B96CE2DE1599227E0069652E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		B986F33A15ACC12B00DD2583 /* PTFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTFileManager.h; sourceTree = "<group>"; };
+		B986F33B15ACC12B00DD2583 /* PTFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTFileManager.m; sourceTree = "<group>"; wrapsLines = 0; };
+		B986F34015ACCAA000DD2583 /* PTTrackRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTrackRecord.h; sourceTree = "<group>"; };
+		B986F34115ACCAA000DD2583 /* PTTrackRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTrackRecord.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +216,10 @@
 				B96CE2DA1599027D0069652E /* PTLocationController.m */,
 				B9408654159A709300F83F47 /* PTKMLWriter.h */,
 				B9408655159A709300F83F47 /* PTKMLWriter.m */,
+				B986F33A15ACC12B00DD2583 /* PTFileManager.h */,
+				B986F33B15ACC12B00DD2583 /* PTFileManager.m */,
+				B986F34015ACCAA000DD2583 /* PTTrackRecord.h */,
+				B986F34115ACCAA000DD2583 /* PTTrackRecord.m */,
 				B96CE292159900C30069652E /* Supporting Files */,
 			);
 			path = PathTrack;
@@ -450,6 +462,8 @@
 				B9402A1715A62ABF00421624 /* PTLocationController.m in Sources */,
 				B9402A1815A62ABF00421624 /* XMLWriter.m in Sources */,
 				B9402A1915A62ABF00421624 /* PTKMLWriter.m in Sources */,
+				B986F33C15ACC12B00DD2583 /* PTFileManager.m in Sources */,
+				B986F34215ACCAA000DD2583 /* PTTrackRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +477,8 @@
 				B96CE2DB1599027D0069652E /* PTLocationController.m in Sources */,
 				B9408653159A704900F83F47 /* XMLWriter.m in Sources */,
 				B9408656159A709300F83F47 /* PTKMLWriter.m in Sources */,
+				B986F33F15ACC6C200DD2583 /* PTFileManager.m in Sources */,
+				B986F34315ACCB4E00DD2583 /* PTTrackRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +579,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
@@ -590,6 +610,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;

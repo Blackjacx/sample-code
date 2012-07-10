@@ -30,6 +30,8 @@
 
 - (void)decreaseAccuracyByValue:(NSUInteger)aValue;
 - (void)increaseAccuracyByValue:(NSUInteger)aValue;
+- (NSUInteger)numberOfAccuracies;
+- (NSUInteger)currentAccuracyIndex;
 
 @end
 

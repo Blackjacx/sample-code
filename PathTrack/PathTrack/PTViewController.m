@@ -8,6 +8,8 @@
 
 #import "PTViewController.h"
 #import "PTLocationController.h"
+#import "PTFileManager.h"
+#import "PTTrackRecord.h"
 
 PCL_DEFINE_STRING_WITH_AUTO_VALUE(PTViewControllerActionSheetButtonTitleLocalizablaKeyIncreaseAccuracy)
 PCL_DEFINE_STRING_WITH_AUTO_VALUE(PTViewControllerActionSheetButtonTitleLocalizablaKeyDecreaseAccuracy)
@@ -16,20 +18,19 @@ PCL_DEFINE_STRING_WITH_AUTO_VALUE(PTViewControllerActionSheetButtonTitleLocaliza
 
 @interface PTViewController ()
 
-@property(nonatomic, readonly)NSString * storageDirectory;
+@property(nonatomic, strong)PTFileManager * fileManager;
+@property(nonatomic, strong)PTLocationController * locationController;
+@property(nonatomic, strong)PTTrackRecord * trackRecord;
 
 @end
 
 @implementation PTViewController
 {
-	PTLocationController * _locationController;
 	UILabel * _locationLabel;
 	UILabel * _accuracyLabel;
-	NSMutableArray * _collectedLocationList;
 	UIActionSheet * _actionSheet;
 	UIBarButtonItem * _moreActionButtonItem;
 }
-@synthesize storageDirectory = _storageDirectory;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	
@@ -37,11 +38,13 @@ PCL_DEFINE_STRING_WITH_AUTO_VALUE(PTViewControllerActionSheetButtonTitleLocaliza
 	
 	if( self ) {
 		
-		_collectedLocationList = [[NSMutableArray alloc] init];
+		self.trackRecord = [[PTTrackRecord alloc] init];
 		
-		_locationController = [[PTLocationController alloc] init];
+		self.locationController = [[PTLocationController alloc] init];
 		_locationController.powerSavingEnabled = YES;
 		_locationController.delegate = self;
+		
+		self.fileManager = [[PTFileManager alloc] init];
 	}
 	return self;
 }
@@ -83,8 +86,18 @@ PCL_DEFINE_STRING_WITH_AUTO_VALUE(PTViewControllerActionSheetButtonTitleLocaliza
 																		  target:self
 																		  action:@selector(onMoreActions:)];
 	[self.navigationItem setRightBarButtonItem:_moreActionButtonItem];
+	
+	UIStepper * accuracyModifierCtrl = [[UIStepper alloc] initWithFrame:CGRectZero];
+	accuracyModifierCtrl.continuous = NO;
+	accuracyModifierCtrl.minimumValue = 0;
+	accuracyModifierCtrl.maximumValue = [self.locationController numberOfAccuracies]-1;
+	accuracyModifierCtrl.value = [self.locationController currentAccuracyIndex];
+	UIBarButtonItem * accuracyModifierBarItem = [[UIBarButtonItem alloc] initWithCustomView:accuracyModifierCtrl];
+	[self.navigationItem setLeftBarButtonItem:accuracyModifierBarItem];
+	
+	[accuracyModifierCtrl addObserver:self forKeyPath:@"value" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
 
-	[_locationController startLocationDelivery];
+	[self.locationController startLocationDelivery];
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,51 +116,34 @@ PCL_DEFINE_STRING_WITH_AUTO_VALUE(PTViewControllerActionSheetButtonTitleLocaliza
 }
 
 // MARK:
-// MARK: Raw Data Handling
-
-- (NSString *)storageDirectory {
-	
-	if( !_storageDirectory ) {
-		_storageDirectory = NSTemporaryDirectory();
-	}
-	return _storageDirectory;
-}
-
-- (NSArray *)allSavedTrackFilePaths {
-	
-	return nil;
-}
-
-// MARK:
 // MARK: Action Handling
 
 - (IBAction)onStop:(id)sender
 {
-	[_locationController stopLocationDelivery];
+	[self.locationController stopLocationDelivery];
 	
 	// Save collected Location Data
-	NSLocale * deLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"de_DE"];
 	NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-	[dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-	[dateFormatter setLocale:deLocale];
+	[dateFormatter setDateFormat:@"yyyy-MM-dd_HH:mm:ss"];
 	
-	NSString * archiveFileName = [dateFormatter stringFromDate:[NSDate date]];
-	NSString * targetDir = self.storageDirectory;
-	NSString * completePath = [targetDir stringByAppendingPathComponent:archiveFileName];
+	NSString * archiveFileName = [dateFormatter stringFromDate:self.trackRecord.creationDate];
+	NSString * dataDir = self.fileManager.dataDirectory;
+	NSString * completePath = [dataDir stringByAppendingPathComponent:archiveFileName];
 	
 	NSLog(@"FilePath: %@", completePath);
 	
-	BOOL archiveResult = [NSKeyedArchiver archiveRootObject:_collectedLocationList toFile:completePath];
+	BOOL archiveResult = [NSKeyedArchiver archiveRootObject:self.trackRecord toFile:completePath];
 	NSLog(@"Data Archived: %d", archiveResult);
 	
 	id obj = [NSKeyedUnarchiver unarchiveObjectWithFile:completePath];
 	
-	if( ![obj isKindOfClass:[NSArray class]] )
+	if( ![obj isKindOfClass:[PTTrackRecord class]] )
 		return;
 	
+	PTTrackRecord * unarchivedRecord = (PTTrackRecord*)obj;
+	
 	NSMutableString * stringLocations = [[NSMutableString alloc] init];
-	for( CLLocation * location in obj ) {
+	for( CLLocation * location in unarchivedRecord.CLLocationObjectList ) {
 		@autoreleasepool {
 			CLLocationDistance altitude = location.altitude * 3;
 			[stringLocations appendFormat:@"\n%.15f,%.15f,%d",
@@ -156,24 +152,45 @@ PCL_DEFINE_STRING_WITH_AUTO_VALUE(PTViewControllerActionSheetButtonTitleLocaliza
 	}
 	
 	MFMailComposeViewController * composer = [[MFMailComposeViewController alloc] init];
-	[composer setSubject:[NSString stringWithFormat:@"New GPS-Track Data Available From: %@", archiveFileName]];
+	[composer setSubject:[NSString stringWithFormat:@"New GPS-Track Data Available From: %@", unarchivedRecord.creationDate]];
 	[composer setMessageBody:stringLocations isHTML:NO];
 	[composer setMailComposeDelegate:self];
 	[self presentViewController:composer animated:YES completion:NULL];
 }
 
 - (IBAction)onIncreaseAccuracy:(id)sender {
-	[_locationController increaseAccuracyByValue:1];
+	[self.locationController increaseAccuracyByValue:1];
 	[self updateAccuracyLabel];
 }
 
 - (IBAction)onDecreaseAccuracy:(id)sender {
-	[_locationController decreaseAccuracyByValue:1];
+	[self.locationController decreaseAccuracyByValue:1];
 	[self updateAccuracyLabel];
 }
 
 - (IBAction)onShowSavedTracks:(id)sender {
+	__block NSString * message = @"";
 	
+	[[self.fileManager allSavedTrackRecords] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+		message = [message stringByAppendingFormat:@"\n%@", [obj lastPathComponent]];
+	}];
+	[[[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+	
+	if( [object isKindOfClass:[UIStepper class]] ) {
+		NSUInteger oldValue = (NSUInteger)[[change objectForKey:NSKeyValueChangeOldKey] doubleValue];
+		NSUInteger newValue = (NSUInteger)[[change objectForKey:NSKeyValueChangeNewKey] doubleValue];
+		
+		if( newValue > oldValue ) {
+			[self.locationController increaseAccuracyByValue:1];
+		}
+		else if( newValue < oldValue ) {
+			[self.locationController decreaseAccuracyByValue:1];
+		}
+		[self updateAccuracyLabel];
+	}
 }
 
 // MARK:
@@ -187,7 +204,7 @@ PCL_DEFINE_STRING_WITH_AUTO_VALUE(PTViewControllerActionSheetButtonTitleLocaliza
 						   @"Did Update from Location:\n\n%@\n\nto Location:\n\n%@",
 						   fromLocation, toLocation];
 	
-	[_collectedLocationList addObject:toLocation];
+	[self.trackRecord addLocationObject:toLocation];
 }
 
 - (void)locationController:(PTLocationController *)controller
@@ -272,7 +289,7 @@ PCL_DEFINE_STRING_WITH_AUTO_VALUE(PTViewControllerActionSheetButtonTitleLocaliza
 
 - (void)updateAccuracyLabel {
 	
-	_accuracyLabel.text = [NSString stringWithFormat:@"Accuracy: %@", [_locationController currentAccuracyAsString]];
+	_accuracyLabel.text = [NSString stringWithFormat:@"Accuracy: %@", [self.locationController currentAccuracyAsString]];
 }
 
 @end

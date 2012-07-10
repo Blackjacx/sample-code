@@ -185,7 +185,7 @@
 }
 
 // MARK:
-// MARK: Increasing / Decreasing Accuracy
+// MARK: Working with Current Accuracy
 
 - (void)decreaseAccuracyByValue:(NSUInteger)aValue {
 	NSInteger currentAccuracyIndex = [self.locationAccuracies indexOfObject:@(self.currentAccuracy)];
@@ -201,6 +201,14 @@
 	
 	if( currentAccuracyIndex != newAccuracyIndex )
 		self.currentAccuracy = [[self.locationAccuracies objectAtIndex:newAccuracyIndex] doubleValue];
+}
+
+- (NSUInteger)numberOfAccuracies {
+	return [self.locationAccuracies count];
+}
+
+- (NSUInteger)currentAccuracyIndex {
+	return [self.locationAccuracies indexOfObject:@(self.currentAccuracy)];
 }
 
 @end
