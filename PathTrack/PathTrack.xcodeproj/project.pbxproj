@@ -86,7 +86,7 @@
 
 /* Begin PBXFileReference section */
 		B9402A2715A62ABF00421624 /* PathTrackLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathTrackLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9402A2A15A62B9600421624 /* PathTrack-Free-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PathTrack-Free-Info.plist"; sourceTree = "<group>"; };
+		B9402A2A15A62B9600421624 /* PathTrack-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PathTrack-Info.plist"; sourceTree = "<group>"; };
 		B9408651159A704900F83F47 /* XMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLWriter.h; path = lib/XML/XMLWriter.h; sourceTree = SOURCE_ROOT; };
 		B9408652159A704900F83F47 /* XMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLWriter.m; path = lib/XML/XMLWriter.m; sourceTree = SOURCE_ROOT; };
 		B9408654159A709300F83F47 /* PTKMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKMLWriter.h; sourceTree = "<group>"; };
@@ -95,7 +95,6 @@
 		B96CE28B159900C30069652E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B96CE28D159900C30069652E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B96CE28F159900C30069652E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B96CE293159900C30069652E /* PathTrack-Premium-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PathTrack-Premium-Info.plist"; sourceTree = "<group>"; };
 		B96CE295159900C30069652E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B96CE297159900C30069652E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B96CE299159900C30069652E /* PathTrack-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PathTrack-Prefix.pch"; sourceTree = "<group>"; };
@@ -228,8 +227,7 @@
 		B96CE292159900C30069652E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B9402A2A15A62B9600421624 /* PathTrack-Free-Info.plist */,
-				B96CE293159900C30069652E /* PathTrack-Premium-Info.plist */,
+				B9402A2A15A62B9600421624 /* PathTrack-Info.plist */,
 				B96CE294159900C30069652E /* InfoPlist.strings */,
 				B96CE297159900C30069652E /* main.m */,
 				B96CE299159900C30069652E /* PathTrack-Prefix.pch */,
@@ -536,7 +534,6 @@
 				CURRENT_PROJECT_VERSION = 0.1.0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PathTrack/PathTrack-Prefix.pch";
-				INFOPLIST_FILE = "PathTrack/PathTrack-Free-Info.plist";
 				PRODUCT_NAME = PathTrackLite;
 				WRAPPER_EXTENSION = app;
 			};
@@ -548,7 +545,6 @@
 				CURRENT_PROJECT_VERSION = 0.1.0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PathTrack/PathTrack-Prefix.pch";
-				INFOPLIST_FILE = "PathTrack/PathTrack-Free-Info.plist";
 				PRODUCT_NAME = PathTrackLite;
 				WRAPPER_EXTENSION = app;
 			};
@@ -578,6 +574,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "PathTrack/PathTrack-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
@@ -608,6 +605,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "PathTrack/PathTrack-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
@@ -629,7 +627,6 @@
 				CURRENT_PROJECT_VERSION = 0.1.0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PathTrack/PathTrack-Prefix.pch";
-				INFOPLIST_FILE = "PathTrack/PathTrack-Premium-Info.plist";
 				PRODUCT_NAME = PathTrackPrimer;
 				WRAPPER_EXTENSION = app;
 			};
@@ -641,7 +638,6 @@
 				CURRENT_PROJECT_VERSION = 0.1.0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PathTrack/PathTrack-Prefix.pch";
-				INFOPLIST_FILE = "PathTrack/PathTrack-Premium-Info.plist";
 				PRODUCT_NAME = PathTrackPrimer;
 				WRAPPER_EXTENSION = app;
 			};
