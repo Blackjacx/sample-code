@@ -110,9 +110,7 @@
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
-{
-	NSLog(@"Location: %@", newLocation);
-	
+{	
 	SEL selector = @selector(locationController:didUpdateToLocation:fromLocation:);
 	if( [self.delegate respondsToSelector:selector] ) {
 		dispatch_async(dispatch_get_main_queue(), ^{

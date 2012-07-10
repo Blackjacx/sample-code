@@ -7,7 +7,7 @@
 //
 
 /*!
- @TODO * Save chunks of X received coordinates immediately to disk instead of to memory to prevent losses due to app crashes.
+	@TODO * Save chunks of X received coordinates immediately to disk instead of to memory to prevent losses due to app crashes.
  */
 
 #import "PTAppDelegate.h"

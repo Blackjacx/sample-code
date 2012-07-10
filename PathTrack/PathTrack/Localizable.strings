@@ -16,8 +16,10 @@
 "PTLocationControllerAccuracyThreeKilometers"="3km";
 "PTLocationControllerAccuracyUnknown"="Unknown";
 
+"PTViewControllerTitle"="Overview";
+
+"PTViewControllerActionSheetTitle"="Choose an Option";
 "PTViewControllerActionSheetButtonTitleLocalizablaKeyIncreaseAccuracy"="Increase Accuracy";
 "PTViewControllerActionSheetButtonTitleLocalizablaKeyDecreaseAccuracy"="Decrease Accuracy";
 "PTViewControllerActionSheetButtonTitleLocalizablaKeyStop"="Stop";
-
-"PTViewControllerActionSheetTitle"="Choose an Option";
+"PTViewControllerActionSheetButtonTitleLocalizablaKeyShowSavedTracks"="Show Saved Tracks";
