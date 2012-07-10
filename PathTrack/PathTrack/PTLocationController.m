@@ -28,7 +28,7 @@
 	
     if ( self ) {
 		
-		self.powerSavingEnabled = NO;
+//		self.powerSavingEnabled = NO;
 		
 		self.locationAccuracies = [[NSArray alloc] initWithObjects:
 								   @(kCLLocationAccuracyThreeKilometers),
@@ -41,15 +41,15 @@
 		
 		[self createLocationManager];
 
-		[[NSNotificationCenter defaultCenter] addObserver:self
-												 selector:@selector(applicationDidDidEnterBackground:)
-													 name:UIApplicationDidEnterBackgroundNotification
-												   object:nil];
-		
-		[[NSNotificationCenter defaultCenter] addObserver:self
-												 selector:@selector(applicationWillEnterForeground:)
-													 name:UIApplicationWillEnterForegroundNotification
-												   object:nil];
+//		[[NSNotificationCenter defaultCenter] addObserver:self
+//												 selector:@selector(applicationDidDidEnterBackground:)
+//													 name:UIApplicationDidEnterBackgroundNotification
+//												   object:nil];
+//		
+//		[[NSNotificationCenter defaultCenter] addObserver:self
+//												 selector:@selector(applicationWillEnterForeground:)
+//													 name:UIApplicationWillEnterForegroundNotification
+//												   object:nil];
     }
     return self;
 }
@@ -87,22 +87,22 @@
 // MARK:
 // MARK: Application Delegate Notifications
 
-- (void)applicationDidDidEnterBackground:(NSNotification*)note {
-	
-	NSLog(@"%@", NSStringFromSelector(_cmd));
-	
-	if( self.powerSavingEnabled ) {
-		self.accuracyBeforeAppDidEnterBackgroundBackground = self.currentAccuracy;
-		[self decreaseAccuracyByValue:1];
-	}
-}
+//- (void)applicationDidDidEnterBackground:(NSNotification*)note {
+//	
+//	NSLog(@"%@", NSStringFromSelector(_cmd));
+//	
+//	if( self.powerSavingEnabled ) {
+//		self.accuracyBeforeAppDidEnterBackgroundBackground = self.currentAccuracy;
+//		[self decreaseAccuracyByValue:1];
+//	}
+//}
 
-- (void)applicationWillEnterForeground:(NSNotification*)note {
-	
-	NSLog(@"%@", NSStringFromSelector(_cmd));
-	
-	self.currentAccuracy = self.accuracyBeforeAppDidEnterBackgroundBackground;
-}
+//- (void)applicationWillEnterForeground:(NSNotification*)note {
+//	
+//	NSLog(@"%@", NSStringFromSelector(_cmd));
+//	
+//	self.currentAccuracy = self.accuracyBeforeAppDidEnterBackgroundBackground;
+//}
 
 // MARK:
 // MARK: CLLocationManager Delegate

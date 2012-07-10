@@ -14,7 +14,7 @@
 
 @property(nonatomic, strong) id<PTLocationControllerDelegate> delegate;
 @property(nonatomic, assign) CLLocationAccuracy currentAccuracy;
-@property(nonatomic, assign, getter = isPowerSavingEnabled) BOOL powerSavingEnabled;
+//@property(nonatomic, assign, getter = isPowerSavingEnabled) BOOL powerSavingEnabled;
 
 @property(nonatomic, readonly) NSString * currentAccuracyAsString;
 

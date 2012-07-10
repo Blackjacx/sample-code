@@ -41,7 +41,7 @@ PCL_DEFINE_STRING_WITH_AUTO_VALUE(PTViewControllerActionSheetButtonTitleLocaliza
 		self.trackRecord = [[PTTrackRecord alloc] init];
 		
 		self.locationController = [[PTLocationController alloc] init];
-		_locationController.powerSavingEnabled = YES;
+//		_locationController.powerSavingEnabled = YES;
 		_locationController.delegate = self;
 		
 		self.fileManager = [[PTFileManager alloc] init];
@@ -172,7 +172,10 @@ PCL_DEFINE_STRING_WITH_AUTO_VALUE(PTViewControllerActionSheetButtonTitleLocaliza
 	__block NSString * message = @"";
 	
 	[[self.fileManager allSavedTrackRecords] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-		message = [message stringByAppendingFormat:@"\n%@", [obj lastPathComponent]];
+		if( idx == 0 )
+			message = [message stringByAppendingFormat:@"%@", [obj lastPathComponent]];
+		else
+			message = [message stringByAppendingFormat:@"\n%@", [obj lastPathComponent]];
 	}];
 	[[[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }
