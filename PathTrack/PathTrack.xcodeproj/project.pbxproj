@@ -7,20 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B9402A1415A62ABF00421624 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B96CE297159900C30069652E /* main.m */; };
-		B9402A1515A62ABF00421624 /* PTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B96CE29B159900C30069652E /* PTAppDelegate.m */; };
-		B9402A1615A62ABF00421624 /* PTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96CE29E159900C30069652E /* PTViewController.m */; };
-		B9402A1715A62ABF00421624 /* PTLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96CE2DA1599027D0069652E /* PTLocationController.m */; };
-		B9402A1815A62ABF00421624 /* XMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B9408652159A704900F83F47 /* XMLWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9402A1915A62ABF00421624 /* PTKMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B9408655159A709300F83F47 /* PTKMLWriter.m */; };
-		B9402A1B15A62ABF00421624 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96CE2DC15991EE40069652E /* MessageUI.framework */; };
-		B9402A1C15A62ABF00421624 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96CE2D7159901BD0069652E /* CoreLocation.framework */; };
-		B9402A1D15A62ABF00421624 /* libPrivateCodeLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B96CE2CC159900F10069652E /* libPrivateCodeLibrary.a */; };
-		B9402A1E15A62ABF00421624 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96CE28B159900C30069652E /* UIKit.framework */; };
-		B9402A1F15A62ABF00421624 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96CE28D159900C30069652E /* Foundation.framework */; };
-		B9402A2015A62ABF00421624 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96CE28F159900C30069652E /* CoreGraphics.framework */; };
-		B9402A2215A62ABF00421624 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B96CE294159900C30069652E /* InfoPlist.strings */; };
-		B9402A2315A62ABF00421624 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B96CE2DE1599227E0069652E /* Localizable.strings */; };
 		B9402A2C15A62C2500421624 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B96CE2B5159900C40069652E /* InfoPlist.strings */; };
 		B9408653159A704900F83F47 /* XMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B9408652159A704900F83F47 /* XMLWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B9408656159A709300F83F47 /* PTKMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B9408655159A709300F83F47 /* PTKMLWriter.m */; };
@@ -40,20 +26,11 @@
 		B96CE2DB1599027D0069652E /* PTLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96CE2DA1599027D0069652E /* PTLocationController.m */; };
 		B96CE2DD15991EE40069652E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96CE2DC15991EE40069652E /* MessageUI.framework */; };
 		B96CE2DF1599227E0069652E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B96CE2DE1599227E0069652E /* Localizable.strings */; };
-		B986F33C15ACC12B00DD2583 /* PTFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B986F33B15ACC12B00DD2583 /* PTFileManager.m */; };
 		B986F33F15ACC6C200DD2583 /* PTFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B986F33B15ACC12B00DD2583 /* PTFileManager.m */; };
-		B986F34215ACCAA000DD2583 /* PTTrackRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = B986F34115ACCAA000DD2583 /* PTTrackRecord.m */; };
 		B986F34315ACCB4E00DD2583 /* PTTrackRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = B986F34115ACCAA000DD2583 /* PTTrackRecord.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B9402A1115A62ABF00421624 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B96CE2C3159900F00069652E /* PrivateCodeLibrary.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D560ACF8138AF6250010DD6C;
-			remoteInfo = PrivateCodeLibrary;
-		};
 		B96CE2B0159900C40069652E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B96CE27E159900C30069652E /* Project object */;
@@ -85,13 +62,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B9402A2715A62ABF00421624 /* PathTrackLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathTrackLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9402A2A15A62B9600421624 /* PathTrack-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PathTrack-Info.plist"; sourceTree = "<group>"; };
 		B9408651159A704900F83F47 /* XMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLWriter.h; path = lib/XML/XMLWriter.h; sourceTree = SOURCE_ROOT; };
 		B9408652159A704900F83F47 /* XMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLWriter.m; path = lib/XML/XMLWriter.m; sourceTree = SOURCE_ROOT; };
 		B9408654159A709300F83F47 /* PTKMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKMLWriter.h; sourceTree = "<group>"; };
 		B9408655159A709300F83F47 /* PTKMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKMLWriter.m; sourceTree = "<group>"; };
-		B96CE287159900C30069652E /* PathTrackPrimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathTrackPrimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B96CE287159900C30069652E /* PathTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96CE28B159900C30069652E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B96CE28D159900C30069652E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B96CE28F159900C30069652E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -121,19 +97,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B9402A1A15A62ABF00421624 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B9402A1B15A62ABF00421624 /* MessageUI.framework in Frameworks */,
-				B9402A1C15A62ABF00421624 /* CoreLocation.framework in Frameworks */,
-				B9402A1D15A62ABF00421624 /* libPrivateCodeLibrary.a in Frameworks */,
-				B9402A1E15A62ABF00421624 /* UIKit.framework in Frameworks */,
-				B9402A1F15A62ABF00421624 /* Foundation.framework in Frameworks */,
-				B9402A2015A62ABF00421624 /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B96CE284159900C30069652E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,9 +146,8 @@
 		B96CE288159900C30069652E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B96CE287159900C30069652E /* PathTrackPrimer.app */,
+				B96CE287159900C30069652E /* PathTrack.app */,
 				B96CE2AB159900C40069652E /* PathTrackTests.octest */,
-				B9402A2715A62ABF00421624 /* PathTrackLite.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -267,28 +229,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B9402A0F15A62ABF00421624 /* PathTrackFree */ = {
+		B96CE286159900C30069652E /* PathTrack */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B9402A2415A62ABF00421624 /* Build configuration list for PBXNativeTarget "PathTrackFree" */;
-			buildPhases = (
-				B9402A1215A62ABF00421624 /* Run Script */,
-				B9402A1315A62ABF00421624 /* Sources */,
-				B9402A1A15A62ABF00421624 /* Frameworks */,
-				B9402A2115A62ABF00421624 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B9402A1015A62ABF00421624 /* PBXTargetDependency */,
-			);
-			name = PathTrackFree;
-			productName = PathTrack;
-			productReference = B9402A2715A62ABF00421624 /* PathTrackLite.app */;
-			productType = "com.apple.product-type.application";
-		};
-		B96CE286159900C30069652E /* PathTrackPremium */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B96CE2BD159900C40069652E /* Build configuration list for PBXNativeTarget "PathTrackPremium" */;
+			buildConfigurationList = B96CE2BD159900C40069652E /* Build configuration list for PBXNativeTarget "PathTrack" */;
 			buildPhases = (
 				B9402A0E15A628F600421624 /* Run Script */,
 				B96CE283159900C30069652E /* Sources */,
@@ -300,9 +243,9 @@
 			dependencies = (
 				B96CE2D01599012C0069652E /* PBXTargetDependency */,
 			);
-			name = PathTrackPremium;
+			name = PathTrack;
 			productName = PathTrack;
-			productReference = B96CE287159900C30069652E /* PathTrackPrimer.app */;
+			productReference = B96CE287159900C30069652E /* PathTrack.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B96CE2AA159900C40069652E /* PathTrackTests */ = {
@@ -352,8 +295,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				B9402A0F15A62ABF00421624 /* PathTrackFree */,
-				B96CE286159900C30069652E /* PathTrackPremium */,
+				B96CE286159900C30069652E /* PathTrack */,
 				B96CE2AA159900C40069652E /* PathTrackTests */,
 			);
 		};
@@ -377,15 +319,6 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B9402A2115A62ABF00421624 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B9402A2215A62ABF00421624 /* InfoPlist.strings in Resources */,
-				B9402A2315A62ABF00421624 /* Localizable.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B96CE285159900C30069652E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -420,20 +353,6 @@
 			shellPath = /bin/sh;
 			shellScript = "echo ${PROJECT_NAME}";
 		};
-		B9402A1215A62ABF00421624 /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "echo ${PROJECT_NAME}";
-		};
 		B96CE2A9159900C40069652E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -450,21 +369,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B9402A1315A62ABF00421624 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B9402A1415A62ABF00421624 /* main.m in Sources */,
-				B9402A1515A62ABF00421624 /* PTAppDelegate.m in Sources */,
-				B9402A1615A62ABF00421624 /* PTViewController.m in Sources */,
-				B9402A1715A62ABF00421624 /* PTLocationController.m in Sources */,
-				B9402A1815A62ABF00421624 /* XMLWriter.m in Sources */,
-				B9402A1915A62ABF00421624 /* PTKMLWriter.m in Sources */,
-				B986F33C15ACC12B00DD2583 /* PTFileManager.m in Sources */,
-				B986F34215ACCAA000DD2583 /* PTTrackRecord.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B96CE283159900C30069652E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -491,14 +395,9 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B9402A1015A62ABF00421624 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PrivateCodeLibrary;
-			targetProxy = B9402A1115A62ABF00421624 /* PBXContainerItemProxy */;
-		};
 		B96CE2B1159900C40069652E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B96CE286159900C30069652E /* PathTrackPremium */;
+			target = B96CE286159900C30069652E /* PathTrack */;
 			targetProxy = B96CE2B0159900C40069652E /* PBXContainerItemProxy */;
 		};
 		B96CE2D01599012C0069652E /* PBXTargetDependency */ = {
@@ -528,28 +427,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		B9402A2515A62ABF00421624 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 0.1.0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PathTrack/PathTrack-Prefix.pch";
-				PRODUCT_NAME = PathTrackLite;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		B9402A2615A62ABF00421624 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 0.1.0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PathTrack/PathTrack-Prefix.pch";
-				PRODUCT_NAME = PathTrackLite;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
 		B96CE2BB159900C40069652E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -624,10 +501,10 @@
 		B96CE2BE159900C40069652E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 0.1.0;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PathTrack/PathTrack-Prefix.pch";
-				PRODUCT_NAME = PathTrackPrimer;
+				PRODUCT_NAME = PathTrack;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -635,10 +512,10 @@
 		B96CE2BF159900C40069652E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 0.1.0;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PathTrack/PathTrack-Prefix.pch";
-				PRODUCT_NAME = PathTrackPrimer;
+				PRODUCT_NAME = PathTrack;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -682,15 +559,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B9402A2415A62ABF00421624 /* Build configuration list for PBXNativeTarget "PathTrackFree" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B9402A2515A62ABF00421624 /* Debug */,
-				B9402A2615A62ABF00421624 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		B96CE281159900C30069652E /* Build configuration list for PBXProject "PathTrack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -700,7 +568,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B96CE2BD159900C40069652E /* Build configuration list for PBXNativeTarget "PathTrackPremium" */ = {
+		B96CE2BD159900C40069652E /* Build configuration list for PBXNativeTarget "PathTrack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B96CE2BE159900C40069652E /* Debug */,

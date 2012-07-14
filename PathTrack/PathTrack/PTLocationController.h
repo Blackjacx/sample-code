@@ -16,8 +16,6 @@
 @property(nonatomic, assign) CLLocationAccuracy currentAccuracy;
 //@property(nonatomic, assign, getter = isPowerSavingEnabled) BOOL powerSavingEnabled;
 
-@property(nonatomic, readonly) NSString * currentAccuracyAsString;
-
 // MARK:
 // MARK: Location Controller Interaction
 
@@ -26,12 +24,14 @@
 - (BOOL)isLocationServiceAvailable;
 
 // MARK:
-// MARK: Increasing / Decreasing Accuracy
+// MARK: Accuracy Management
 
 - (void)decreaseAccuracyByValue:(NSUInteger)aValue;
 - (void)increaseAccuracyByValue:(NSUInteger)aValue;
+
 - (NSUInteger)numberOfAccuracies;
 - (NSUInteger)currentAccuracyIndex;
+- (NSString*)currentAccuracyAsString;
 
 @end
 

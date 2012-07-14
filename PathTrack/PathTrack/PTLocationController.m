@@ -8,19 +8,36 @@
 
 #import "PTLocationController.h"
 
+//! @brief A constant array containing the available accuracies of CoreLocation.
+static NSArray * _locationAccuracies = nil;
+
 @interface PTLocationController ()
 
 @property(nonatomic, strong) CLLocationManager * locationManager;
-@property(nonatomic, assign) CLLocationAccuracy accuracyBeforeAppDidEnterBackgroundBackground;
-@property(nonatomic, copy) NSArray * locationAccuracies;
+@property(nonatomic, assign) CLLocationAccuracy accuracyBeforeAppDidEnterBackground;
 @property(nonatomic, assign) BOOL locationServiceStarted;
 
 @end
 
 @implementation PTLocationController
 
-// MARK:
-// MARK: Location Controller Lifecycle
+// MARK: 
+// MARK: Lifecycle
+
++ (void)initialize {
+	
+	if( !_locationAccuracies ) {
+		
+		_locationAccuracies = [[NSArray alloc] initWithObjects:
+							   @(kCLLocationAccuracyThreeKilometers),
+							   @(kCLLocationAccuracyKilometer),
+							   @(kCLLocationAccuracyHundredMeters),
+							   @(kCLLocationAccuracyNearestTenMeters),
+							   @(kCLLocationAccuracyBest),
+							   @(kCLLocationAccuracyBestForNavigation),
+							   nil];
+	}
+}
 
 - (id) init
 {
@@ -29,15 +46,6 @@
     if ( self ) {
 		
 //		self.powerSavingEnabled = NO;
-		
-		self.locationAccuracies = [[NSArray alloc] initWithObjects:
-								   @(kCLLocationAccuracyThreeKilometers),
-								   @(kCLLocationAccuracyKilometer),
-								   @(kCLLocationAccuracyHundredMeters),
-								   @(kCLLocationAccuracyNearestTenMeters),
-								   @(kCLLocationAccuracyBest),
-								   @(kCLLocationAccuracyBestForNavigation),
-								   nil];
 		
 		[self createLocationManager];
 
@@ -75,7 +83,7 @@
 	self.currentAccuracy = kCLLocationAccuracyBest;
 }
 
-// MARK:
+// MARK: 
 // MARK: Setter: Accuracy Property
 
 - (void)setCurrentAccuracy:(CLLocationAccuracy)currentAccuracy {
@@ -84,7 +92,7 @@
 	self.locationManager.desiredAccuracy = currentAccuracy;
 }
 
-// MARK:
+// MARK: 
 // MARK: Application Delegate Notifications
 
 //- (void)applicationDidDidEnterBackground:(NSNotification*)note {
@@ -92,7 +100,7 @@
 //	NSLog(@"%@", NSStringFromSelector(_cmd));
 //	
 //	if( self.powerSavingEnabled ) {
-//		self.accuracyBeforeAppDidEnterBackgroundBackground = self.currentAccuracy;
+//		self.accuracyBeforeAppDidEnterBackground = self.currentAccuracy;
 //		[self decreaseAccuracyByValue:1];
 //	}
 //}
@@ -101,10 +109,10 @@
 //	
 //	NSLog(@"%@", NSStringFromSelector(_cmd));
 //	
-//	self.currentAccuracy = self.accuracyBeforeAppDidEnterBackgroundBackground;
+//	self.currentAccuracy = self.accuracyBeforeAppDidEnterBackground;
 //}
 
-// MARK:
+// MARK: 
 // MARK: CLLocationManager Delegate
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -130,7 +138,7 @@
 	}
 }
 
-// MARK:
+// MARK: 
 // MARK: Location Controller Interaction
 
 - (void)startLocationDelivery {
@@ -152,14 +160,46 @@
 	[self stopLocationDelivery];
 }
 
+// MARK: 
+// MARK: Accuracy Management
+
+- (void)decreaseAccuracyByValue:(NSUInteger)aValue {
+	NSInteger currentAccuracyIndex = [_locationAccuracies indexOfObject:@(self.currentAccuracy)];
+	NSInteger newAccuracyIndex = MAX( 0, currentAccuracyIndex-(NSInteger)aValue );
+
+	if( currentAccuracyIndex != newAccuracyIndex )
+		self.currentAccuracy = [[_locationAccuracies objectAtIndex:newAccuracyIndex] doubleValue];
+}
+
+- (void)increaseAccuracyByValue:(NSUInteger)aValue {
+	NSInteger currentAccuracyIndex = [_locationAccuracies indexOfObject:@(self.currentAccuracy)];
+	NSInteger newAccuracyIndex = MIN( [_locationAccuracies count]-1, currentAccuracyIndex+(NSInteger)aValue );
+	
+	if( currentAccuracyIndex != newAccuracyIndex )
+		self.currentAccuracy = [[_locationAccuracies objectAtIndex:newAccuracyIndex] doubleValue];
+}
+
+- (NSUInteger)numberOfAccuracies {
+	return [_locationAccuracies count];
+}
+
+- (NSUInteger)currentAccuracyIndex {
+	return [_locationAccuracies indexOfObject:@(self.currentAccuracy)];
+}
+
 - (BOOL)isLocationServiceAvailable {
 	BOOL isServiceAvailable = [CLLocationManager locationServicesEnabled];
 	BOOL isAppAuthorized = [CLLocationManager authorizationStatus];
 	return isServiceAvailable && isAppAuthorized;
 }
 
-// MARK:
-// MARK: Display Accuracy As String
+- (NSString *)currentAccuracyAsString {
+	return [self stringForAccuracy:self.currentAccuracy];
+}
+
+
+// MARK: 
+// MARK: Private
 
 - (NSString *)stringForAccuracy:(CLLocationAccuracy)accuracy {
 	if( accuracy == kCLLocationAccuracyBestForNavigation )
@@ -176,37 +216,6 @@
 		return NSLocalizedString(@"PTLocationControllerAccuracyThreeKilometers", @"");
 	else
 		return NSLocalizedString(@"PTLocationControllerAccuracyUnknown", @"");
-}
-
-- (NSString *)currentAccuracyAsString {
-	return [self stringForAccuracy:self.currentAccuracy];
-}
-
-// MARK:
-// MARK: Working with Current Accuracy
-
-- (void)decreaseAccuracyByValue:(NSUInteger)aValue {
-	NSInteger currentAccuracyIndex = [self.locationAccuracies indexOfObject:@(self.currentAccuracy)];
-	NSInteger newAccuracyIndex = MAX( 0, currentAccuracyIndex-(NSInteger)aValue );
-
-	if( currentAccuracyIndex != newAccuracyIndex )
-		self.currentAccuracy = [[self.locationAccuracies objectAtIndex:newAccuracyIndex] doubleValue];
-}
-
-- (void)increaseAccuracyByValue:(NSUInteger)aValue {
-	NSInteger currentAccuracyIndex = [self.locationAccuracies indexOfObject:@(self.currentAccuracy)];
-	NSInteger newAccuracyIndex = MIN( [self.locationAccuracies count]-1, currentAccuracyIndex+(NSInteger)aValue );
-	
-	if( currentAccuracyIndex != newAccuracyIndex )
-		self.currentAccuracy = [[self.locationAccuracies objectAtIndex:newAccuracyIndex] doubleValue];
-}
-
-- (NSUInteger)numberOfAccuracies {
-	return [self.locationAccuracies count];
-}
-
-- (NSUInteger)currentAccuracyIndex {
-	return [self.locationAccuracies indexOfObject:@(self.currentAccuracy)];
 }
 
 @end
