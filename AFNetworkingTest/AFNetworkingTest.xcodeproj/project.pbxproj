@@ -30,35 +30,22 @@
 		B939D38D165AB549008AD2C1 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B939D382165AB549008AD2C1 /* AFURLConnectionOperation.m */; };
 		B939D38E165AB549008AD2C1 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B939D384165AB549008AD2C1 /* AFXMLRequestOperation.m */; };
 		B939D38F165AB549008AD2C1 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B939D386165AB549008AD2C1 /* UIImageView+AFNetworking.m */; };
-		B987BB0F165ABBF3000B7301 /* libHockeyLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B987BB0A165ABBCB000B7301 /* libHockeyLib.a */; };
-		B987BB10165ABBF3000B7301 /* libQuincyLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B939D39D165AB574008AD2C1 /* libQuincyLib.a */; };
 		B987BB17165AC49C000B7301 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B987BB15165AC49C000B7301 /* Icon.png */; };
 		B987BB18165AC49C000B7301 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B987BB16165AC49C000B7301 /* Icon@2x.png */; };
+		B9B7B3A2165AD8FD00D4469C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B7B3A1165AD8FD00D4469C /* QuartzCore.framework */; };
+		B9D6B119165ADCF300CE40F9 /* Hockey.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B9D6B118165ADCF300CE40F9 /* Hockey.bundle */; };
+		B9D6B125165ADD6E00CE40F9 /* libHockeyLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D6B122165ADD1A00CE40F9 /* libHockeyLib.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B939D39C165AB574008AD2C1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B939D35C165AB4D9008AD2C1 /* QuincyLib.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 36892BEC145EC96A0036932D;
-			remoteInfo = QuincyLib;
-		};
-		B987BB09165ABBCB000B7301 /* PBXContainerItemProxy */ = {
+		B9D6B121165ADD1A00CE40F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B987BB02165ABBCA000B7301 /* HockeyLib.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = HockeyLib;
 		};
-		B987BB0B165ABBEB000B7301 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B939D35C165AB4D9008AD2C1 /* QuincyLib.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 36892BEB145EC96A0036932D;
-			remoteInfo = QuincyLib;
-		};
-		B987BB0D165ABBEE000B7301 /* PBXContainerItemProxy */ = {
+		B9D6B123165ADD6400CE40F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B987BB02165ABBCA000B7301 /* HockeyLib.xcodeproj */;
 			proxyType = 1;
@@ -88,7 +75,6 @@
 		B939D34D165AB055008AD2C1 /* DLSHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLSHTTPClient.m; sourceTree = "<group>"; };
 		B939D350165AB0D2008AD2C1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B939D352165AB0D7008AD2C1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		B939D35C165AB4D9008AD2C1 /* QuincyLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuincyLib.xcodeproj; path = AFNetworkingTest/lib/QuincyKit/client/iOS/QuincyLib/QuincyLib.xcodeproj; sourceTree = "<group>"; };
 		B939D374165AB549008AD2C1 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPClient.h; path = lib/AFNetworking/AFNetworking/AFHTTPClient.h; sourceTree = "<group>"; };
 		B939D375165AB549008AD2C1 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPClient.m; path = lib/AFNetworking/AFNetworking/AFHTTPClient.m; sourceTree = "<group>"; };
 		B939D376165AB549008AD2C1 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = lib/AFNetworking/AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -108,9 +94,11 @@
 		B939D384165AB549008AD2C1 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFXMLRequestOperation.m; path = lib/AFNetworking/AFNetworking/AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		B939D385165AB549008AD2C1 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "lib/AFNetworking/AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		B939D386165AB549008AD2C1 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "lib/AFNetworking/AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		B987BB02165ABBCA000B7301 /* HockeyLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HockeyLib.xcodeproj; path = AFNetworkingTest/lib/HockeyKit/client/iOS/HockeyLib/HockeyLib.xcodeproj; sourceTree = "<group>"; };
+		B987BB02165ABBCA000B7301 /* HockeyLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HockeyLib.xcodeproj; path = lib/HockeyKit/client/iOS/HockeyLib/HockeyLib.xcodeproj; sourceTree = "<group>"; };
 		B987BB15165AC49C000B7301 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		B987BB16165AC49C000B7301 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		B9B7B3A1165AD8FD00D4469C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B9D6B118165ADCF300CE40F9 /* Hockey.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Hockey.bundle; path = lib/HockeyKit/client/iOS/Hockey.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B987BB0F165ABBF3000B7301 /* libHockeyLib.a in Frameworks */,
-				B987BB10165ABBF3000B7301 /* libQuincyLib.a in Frameworks */,
+				B9D6B125165ADD6E00CE40F9 /* libHockeyLib.a in Frameworks */,
+				B9B7B3A2165AD8FD00D4469C /* QuartzCore.framework in Frameworks */,
 				B939D353165AB0D7008AD2C1 /* SystemConfiguration.framework in Frameworks */,
 				B939D351165AB0D2008AD2C1 /* MobileCoreServices.framework in Frameworks */,
 				B939D30B165AAEEF008AD2C1 /* UIKit.framework in Frameworks */,
@@ -151,13 +139,11 @@
 		B939D309165AAEEF008AD2C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B939D32D165AAFB8008AD2C1 /* AFNetworking */,
-				B987BB02165ABBCA000B7301 /* HockeyLib.xcodeproj */,
-				B939D35C165AB4D9008AD2C1 /* QuincyLib.xcodeproj */,
 				B939D352165AB0D7008AD2C1 /* SystemConfiguration.framework */,
 				B939D350165AB0D2008AD2C1 /* MobileCoreServices.framework */,
 				B939D30A165AAEEF008AD2C1 /* UIKit.framework */,
 				B939D30C165AAEEF008AD2C1 /* Foundation.framework */,
+				B9B7B3A1165AD8FD00D4469C /* QuartzCore.framework */,
 				B939D30E165AAEEF008AD2C1 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
@@ -180,6 +166,8 @@
 		B939D311165AAEEF008AD2C1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B939D32D165AAFB8008AD2C1 /* AFNetworking */,
+				B9D6B11A165ADD1400CE40F9 /* HockeyKit */,
 				B987BB15165AC49C000B7301 /* Icon.png */,
 				B987BB16165AC49C000B7301 /* Icon@2x.png */,
 				B939D312165AAEEF008AD2C1 /* AFNetworkingTest-Info.plist */,
@@ -217,7 +205,6 @@
 				B939D386165AB549008AD2C1 /* UIImageView+AFNetworking.m */,
 			);
 			name = AFNetworking;
-			path = AFNetworkingTest;
 			sourceTree = "<group>";
 		};
 		B939D34F165AB05F008AD2C1 /* DLS */ = {
@@ -229,18 +216,19 @@
 			name = DLS;
 			sourceTree = "<group>";
 		};
-		B939D399165AB574008AD2C1 /* Products */ = {
+		B9D6B11A165ADD1400CE40F9 /* HockeyKit */ = {
 			isa = PBXGroup;
 			children = (
-				B939D39D165AB574008AD2C1 /* libQuincyLib.a */,
+				B9D6B118165ADCF300CE40F9 /* Hockey.bundle */,
+				B987BB02165ABBCA000B7301 /* HockeyLib.xcodeproj */,
 			);
-			name = Products;
+			name = HockeyKit;
 			sourceTree = "<group>";
 		};
-		B987BB03165ABBCA000B7301 /* Products */ = {
+		B9D6B11E165ADD1A00CE40F9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B987BB0A165ABBCB000B7301 /* libHockeyLib.a */,
+				B9D6B122165ADD1A00CE40F9 /* libHockeyLib.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -259,8 +247,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B987BB0E165ABBEE000B7301 /* PBXTargetDependency */,
-				B987BB0C165ABBEB000B7301 /* PBXTargetDependency */,
+				B9D6B124165ADD6400CE40F9 /* PBXTargetDependency */,
 			);
 			name = AFNetworkingTest;
 			productName = AFNetworkingTest;
@@ -289,12 +276,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = B987BB03165ABBCA000B7301 /* Products */;
+					ProductGroup = B9D6B11E165ADD1A00CE40F9 /* Products */;
 					ProjectRef = B987BB02165ABBCA000B7301 /* HockeyLib.xcodeproj */;
-				},
-				{
-					ProductGroup = B939D399165AB574008AD2C1 /* Products */;
-					ProjectRef = B939D35C165AB4D9008AD2C1 /* QuincyLib.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -305,18 +288,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B939D39D165AB574008AD2C1 /* libQuincyLib.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libQuincyLib.a;
-			remoteRef = B939D39C165AB574008AD2C1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B987BB0A165ABBCB000B7301 /* libHockeyLib.a */ = {
+		B9D6B122165ADD1A00CE40F9 /* libHockeyLib.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libHockeyLib.a;
-			remoteRef = B987BB09165ABBCB000B7301 /* PBXContainerItemProxy */;
+			remoteRef = B9D6B121165ADD1A00CE40F9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -333,6 +309,7 @@
 				B939D327165AAEEF008AD2C1 /* ATViewController.xib in Resources */,
 				B987BB17165AC49C000B7301 /* Icon.png in Resources */,
 				B987BB18165AC49C000B7301 /* Icon@2x.png in Resources */,
+				B9D6B119165ADCF300CE40F9 /* Hockey.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,15 +339,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B987BB0C165ABBEB000B7301 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = QuincyLib;
-			targetProxy = B987BB0B165ABBEB000B7301 /* PBXContainerItemProxy */;
-		};
-		B987BB0E165ABBEE000B7301 /* PBXTargetDependency */ = {
+		B9D6B124165ADD6400CE40F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = HockeyLib;
-			targetProxy = B987BB0D165ABBEE000B7301 /* PBXContainerItemProxy */;
+			targetProxy = B9D6B123165ADD6400CE40F9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -411,6 +383,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"CONFIGURATION_$(CONFIGURATION)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -434,6 +407,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "CONFIGURATION_$(CONFIGURATION)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -450,8 +424,11 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AFNetworkingTest/AFNetworkingTest-Prefix.pch";
+				HEADER_SEARCH_PATHS = "AFNetworkingTest/lib/HockeyKit/client/iOS/**";
 				INFOPLIST_FILE = "AFNetworkingTest/AFNetworkingTest-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "AFNetworkingTest/lib/HockeyKit/client/iOS/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -461,8 +438,11 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AFNetworkingTest/AFNetworkingTest-Prefix.pch";
+				HEADER_SEARCH_PATHS = "AFNetworkingTest/lib/HockeyKit/client/iOS/**";
 				INFOPLIST_FILE = "AFNetworkingTest/AFNetworkingTest-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "AFNetworkingTest/lib/HockeyKit/client/iOS/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

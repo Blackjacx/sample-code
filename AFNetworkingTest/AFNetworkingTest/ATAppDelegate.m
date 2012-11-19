@@ -14,11 +14,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+
+	// This variable is available if you add "CONFIGURATION_$(CONFIGURATION)"
+	// to the Preprocessor Macros in the project settings to all configurations
+//	#if !defined (CONFIGURATION_Release)
+	[BWHockeyManager sharedHockeyManager].updateURL = @"http://stefan-herold.net/hockey/";
+	[BWHockeyManager sharedHockeyManager].delegate = self;
+//	#endif
+
 	self.viewController = [[ATViewController alloc] initWithNibName:@"ATViewController" bundle:nil];
 	self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (NSString *)customDeviceIdentifier {
+
+	return @"This_is_my_very_unique_device_id";
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
