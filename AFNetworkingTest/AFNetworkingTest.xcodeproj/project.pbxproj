@@ -32,6 +32,8 @@
 		B939D38F165AB549008AD2C1 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B939D386165AB549008AD2C1 /* UIImageView+AFNetworking.m */; };
 		B987BB0F165ABBF3000B7301 /* libHockeyLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B987BB0A165ABBCB000B7301 /* libHockeyLib.a */; };
 		B987BB10165ABBF3000B7301 /* libQuincyLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B939D39D165AB574008AD2C1 /* libQuincyLib.a */; };
+		B987BB17165AC49C000B7301 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B987BB15165AC49C000B7301 /* Icon.png */; };
+		B987BB18165AC49C000B7301 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B987BB16165AC49C000B7301 /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		B939D385165AB549008AD2C1 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "lib/AFNetworking/AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		B939D386165AB549008AD2C1 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "lib/AFNetworking/AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		B987BB02165ABBCA000B7301 /* HockeyLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HockeyLib.xcodeproj; path = AFNetworkingTest/lib/HockeyKit/client/iOS/HockeyLib/HockeyLib.xcodeproj; sourceTree = "<group>"; };
+		B987BB15165AC49C000B7301 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		B987BB16165AC49C000B7301 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,8 @@
 		B939D311165AAEEF008AD2C1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B987BB15165AC49C000B7301 /* Icon.png */,
+				B987BB16165AC49C000B7301 /* Icon@2x.png */,
 				B939D312165AAEEF008AD2C1 /* AFNetworkingTest-Info.plist */,
 				B939D313165AAEEF008AD2C1 /* InfoPlist.strings */,
 				B939D316165AAEEF008AD2C1 /* main.m */,
@@ -325,6 +331,8 @@
 				B939D31F165AAEEF008AD2C1 /* Default@2x.png in Resources */,
 				B939D321165AAEEF008AD2C1 /* Default-568h@2x.png in Resources */,
 				B939D327165AAEEF008AD2C1 /* ATViewController.xib in Resources */,
+				B987BB17165AC49C000B7301 /* Icon.png in Resources */,
+				B987BB18165AC49C000B7301 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,7 +431,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -431,6 +439,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
