@@ -10,6 +10,8 @@
 	@TODO * Save chunks of X received coordinates immediately to disk instead of to memory to prevent losses due to app crashes.
  */
 
+static NSString * test;
+
 #import "PTAppDelegate.h"
 
 #import "PTViewController.h"
@@ -17,6 +19,11 @@
 @implementation PTAppDelegate
 {
 	UIBackgroundTaskIdentifier _bgTask;
+}
+
++(void)initialize
+{
+	test = [[NSString alloc] initWithString:@"SECRET_TOKEN"];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
