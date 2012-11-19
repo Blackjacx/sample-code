@@ -64,7 +64,6 @@
 		B939D350165AB0D2008AD2C1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B939D352165AB0D7008AD2C1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B939D35C165AB4D9008AD2C1 /* QuincyLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuincyLib.xcodeproj; path = AFNetworkingTest/lib/QuincyKit/client/iOS/QuincyLib/QuincyLib.xcodeproj; sourceTree = "<group>"; };
-		B939D369165AB4F2008AD2C1 /* HockeyLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HockeyLib.xcodeproj; path = AFNetworkingTest/lib/HockeyKit/client/iOS/HockeyLib/HockeyLib.xcodeproj; sourceTree = "<group>"; };
 		B939D374165AB549008AD2C1 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPClient.h; path = lib/AFNetworking/AFNetworking/AFHTTPClient.h; sourceTree = "<group>"; };
 		B939D375165AB549008AD2C1 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPClient.m; path = lib/AFNetworking/AFNetworking/AFHTTPClient.m; sourceTree = "<group>"; };
 		B939D376165AB549008AD2C1 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = lib/AFNetworking/AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -123,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				B939D32D165AAFB8008AD2C1 /* AFNetworking */,
-				B939D369165AB4F2008AD2C1 /* HockeyLib.xcodeproj */,
 				B939D35C165AB4D9008AD2C1 /* QuincyLib.xcodeproj */,
 				B939D352165AB0D7008AD2C1 /* SystemConfiguration.framework */,
 				B939D350165AB0D2008AD2C1 /* MobileCoreServices.framework */,
