@@ -24,6 +24,7 @@
 //	#endif
 
 	[[BWQuincyManager sharedQuincyManager] setSubmissionURL:@"http://apps.byte-welt.net/quincy/crash_v200.php"];
+	[[BWQuincyManager sharedQuincyManager] setFeedbackActivated:YES];
 
 	self.viewController = [[ATViewController alloc] initWithNibName:@"ATViewController" bundle:nil];
 	self.window.rootViewController = self.viewController;
