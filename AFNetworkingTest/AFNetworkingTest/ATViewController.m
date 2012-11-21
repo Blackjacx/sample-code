@@ -18,13 +18,18 @@
 {
     [super viewDidLoad];
 	NSString * version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
-	_versionLabel.text = [NSString stringWithFormat:@"v%@", version];
+	_versionLabel.text = [NSString stringWithFormat:@"version: %@", version];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onCrash:(id)sender {
+
+	[NSException raise:@"AppCrashedManuallyException" format:@"You pressed the button to crash..."];
 }
 
 @end

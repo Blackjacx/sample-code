@@ -8,6 +8,7 @@
 
 #import "ATAppDelegate.h"
 #import "ATViewController.h"
+#import "BWQuincyManager.h"
 
 @implementation ATAppDelegate
 
@@ -21,6 +22,8 @@
 	[BWHockeyManager sharedHockeyManager].updateURL = @"http://stefan-herold.net/hockey/";
 	[BWHockeyManager sharedHockeyManager].delegate = self;
 //	#endif
+
+	[[BWQuincyManager sharedQuincyManager] setSubmissionURL:@"http://apps.byte-welt.net/quincy/crash_v200.php"];
 
 	self.viewController = [[ATViewController alloc] initWithNibName:@"ATViewController" bundle:nil];
 	self.window.rootViewController = self.viewController;
