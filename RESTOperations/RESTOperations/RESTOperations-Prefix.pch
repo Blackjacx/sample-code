@@ -12,5 +12,5 @@
 	#import <UIKit/UIKit.h>
 	#import <Foundation/Foundation.h>
 	
-	#import "PrivateCodeLibrary.h"
+	#import <PublicCodeLibrary/PublicCodeLibrary.h>
 #endif

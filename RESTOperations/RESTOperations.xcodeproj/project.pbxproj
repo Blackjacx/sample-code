@@ -14,30 +14,24 @@
 		B903BF3A1434BE07004CD130 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B903BF391434BE07004CD130 /* main.m */; };
 		B903BF3E1434BE07004CD130 /* RESTOperationsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B903BF3D1434BE07004CD130 /* RESTOperationsAppDelegate.m */; };
 		B903BF411434BE07004CD130 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B903BF3F1434BE07004CD130 /* MainWindow.xib */; };
-		B99C3BF31434BEF5002DE9A7 /* libPrivateCodeLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B99C3BEF1434BEED002DE9A7 /* libPrivateCodeLibrary.a */; };
+		B9105697167965B900126E9D /* PublicCodeLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9105694167965A300126E9D /* PublicCodeLibrary.framework */; };
+		B910569A1679676B00126E9D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91056991679676B00126E9D /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B954A2F814BE49EB009345F6 /* PBXContainerItemProxy */ = {
+		B9105693167965A300126E9D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B99C3BE61434BEEC002DE9A7 /* PrivateCodeLibrary.xcodeproj */;
+			containerPortal = B910568C167965A300126E9D /* PublicCodeLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B962F40016795C810004221B;
+			remoteInfo = PublicCodeLibrary;
+		};
+		B9105695167965B500126E9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B910568C167965A300126E9D /* PublicCodeLibrary.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D560ACF8138AF6250010DD6C;
-			remoteInfo = PrivateCodeLibrary;
-		};
-		B99C3BEE1434BEED002DE9A7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B99C3BE61434BEEC002DE9A7 /* PrivateCodeLibrary.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D560ACF9138AF6260010DD6C;
-			remoteInfo = PrivateCodeLibrary;
-		};
-		B99C3BF01434BEED002DE9A7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B99C3BE61434BEEC002DE9A7 /* PrivateCodeLibrary.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D560AD06138AF6260010DD6C;
-			remoteInfo = PrivateCodeLibraryTests;
+			remoteGlobalIDString = B962F3FF16795C810004221B;
+			remoteInfo = PublicCodeLibrary;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -53,7 +47,8 @@
 		B903BF3C1434BE07004CD130 /* RESTOperationsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RESTOperationsAppDelegate.h; sourceTree = "<group>"; };
 		B903BF3D1434BE07004CD130 /* RESTOperationsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RESTOperationsAppDelegate.m; sourceTree = "<group>"; };
 		B903BF401434BE07004CD130 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		B99C3BE61434BEEC002DE9A7 /* PrivateCodeLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PrivateCodeLibrary.xcodeproj; path = ../../lib/PrivateCodeLibrary/PrivateCodeLibrary.xcodeproj; sourceTree = "<group>"; };
+		B910568C167965A300126E9D /* PublicCodeLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PublicCodeLibrary.xcodeproj; path = ../../lib/PublicCodeLibrary/PublicCodeLibrary.xcodeproj; sourceTree = "<group>"; };
+		B91056991679676B00126E9D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B99C3BF31434BEF5002DE9A7 /* libPrivateCodeLibrary.a in Frameworks */,
+				B910569A1679676B00126E9D /* QuartzCore.framework in Frameworks */,
+				B9105697167965B900126E9D /* PublicCodeLibrary.framework in Frameworks */,
 				B903BF2E1434BE07004CD130 /* UIKit.framework in Frameworks */,
 				B903BF301434BE07004CD130 /* Foundation.framework in Frameworks */,
 				B903BF321434BE07004CD130 /* CoreGraphics.framework in Frameworks */,
@@ -74,7 +70,7 @@
 		B903BF1E1434BE07004CD130 = {
 			isa = PBXGroup;
 			children = (
-				B99C3BE61434BEEC002DE9A7 /* PrivateCodeLibrary.xcodeproj */,
+				B910568C167965A300126E9D /* PublicCodeLibrary.xcodeproj */,
 				B903BF331434BE07004CD130 /* RESTOperations */,
 				B903BF2C1434BE07004CD130 /* Frameworks */,
 				B903BF2A1434BE07004CD130 /* Products */,
@@ -92,6 +88,7 @@
 		B903BF2C1434BE07004CD130 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B91056991679676B00126E9D /* QuartzCore.framework */,
 				B903BF2D1434BE07004CD130 /* UIKit.framework */,
 				B903BF2F1434BE07004CD130 /* Foundation.framework */,
 				B903BF311434BE07004CD130 /* CoreGraphics.framework */,
@@ -121,11 +118,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B99C3BE71434BEEC002DE9A7 /* Products */ = {
+		B910568D167965A300126E9D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B99C3BEF1434BEED002DE9A7 /* libPrivateCodeLibrary.a */,
-				B99C3BF11434BEED002DE9A7 /* PrivateCodeLibraryTests.octest */,
+				B9105694167965A300126E9D /* PublicCodeLibrary.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,7 +140,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B954A2F914BE49EB009345F6 /* PBXTargetDependency */,
+				B9105696167965B500126E9D /* PBXTargetDependency */,
 			);
 			name = RESTOperations;
 			productName = RESTOperations;
@@ -168,8 +164,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = B99C3BE71434BEEC002DE9A7 /* Products */;
-					ProjectRef = B99C3BE61434BEEC002DE9A7 /* PrivateCodeLibrary.xcodeproj */;
+					ProductGroup = B910568D167965A300126E9D /* Products */;
+					ProjectRef = B910568C167965A300126E9D /* PublicCodeLibrary.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -180,18 +176,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B99C3BEF1434BEED002DE9A7 /* libPrivateCodeLibrary.a */ = {
+		B9105694167965A300126E9D /* PublicCodeLibrary.framework */ = {
 			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libPrivateCodeLibrary.a;
-			remoteRef = B99C3BEE1434BEED002DE9A7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B99C3BF11434BEED002DE9A7 /* PrivateCodeLibraryTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = PrivateCodeLibraryTests.octest;
-			remoteRef = B99C3BF01434BEED002DE9A7 /* PBXContainerItemProxy */;
+			fileType = wrapper.framework.static;
+			path = PublicCodeLibrary.framework;
+			remoteRef = B9105693167965A300126E9D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -221,10 +210,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B954A2F914BE49EB009345F6 /* PBXTargetDependency */ = {
+		B9105696167965B500126E9D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = PrivateCodeLibrary;
-			targetProxy = B954A2F814BE49EB009345F6 /* PBXContainerItemProxy */;
+			name = PublicCodeLibrary;
+			targetProxy = B9105695167965B500126E9D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -252,7 +241,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -263,11 +252,12 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
@@ -281,11 +271,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

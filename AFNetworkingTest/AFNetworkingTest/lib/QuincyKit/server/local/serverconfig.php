@@ -29,11 +29,11 @@
 	 * OTHER DEALINGS IN THE SOFTWARE.
 	 */
 
-$hostname = 'your.server.com';                      // the server hosting the scripts
+$hostname = 'apps.byte-welt.net/quincy';                      // the server hosting the scripts
 $webuser = '';                                      // if you restricted /admin/ with .htaccess
 $webpwd = '';                                       // if you restricted /admin/ with .htaccess
-$downloadtodosurl = '/admin/symbolicate_todo.php';  // the path to the script delivering the todo list
-$getcrashdataurl = '/admin/crash_get.php?id=';      // the path to the script delivering the crashlog
+$downloadtodosurl = '/admin/actionapi.php?action=getsymbolicationtodo';  // the path to the script delivering the todo list
+$getcrashdataurl = '/admin/actionapi.php?action=getlogcrashid&id=';      // the path to the script delivering the crashlog
 $updatecrashdataurl = '/admin/crash_update.php';    // the path to the script updating the crashlog
 
 ?>
