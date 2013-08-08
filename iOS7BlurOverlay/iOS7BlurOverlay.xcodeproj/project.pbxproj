@@ -322,6 +322,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Stefan Herold (7TKVH5D4Q5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Stefan Herold (7TKVH5D4Q5)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -339,7 +340,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "BC49B0DF-3F64-4542-8176-4457711F43BE";
+				PROVISIONING_PROFILE = "C3BE3434-A7EA-4AE2-8D84-F5CDA9D72559";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -371,7 +372,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "BC49B0DF-3F64-4542-8176-4457711F43BE";
+				PROVISIONING_PROFILE = "C3BE3434-A7EA-4AE2-8D84-F5CDA9D72559";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -462,6 +463,7 @@
 				B97E9E8317AC2E29003CFB82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B97E9E8417AC2E29003CFB82 /* Build configuration list for PBXNativeTarget "iOS7BlurOverlayTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +472,7 @@
 				B97E9E8617AC2E29003CFB82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
