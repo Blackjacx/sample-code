@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZQk-vf-fdE">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Live Photo Capture View Controller-->
+        <scene sceneID="PPg-wX-XAC">
+            <objects>
+                <viewController id="ZQk-vf-fdE" customClass="LivePhotoCaptureViewController" customModule="iOS_10_Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nrv-sQ-ezH"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wpf-AE-hdM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sn5-Jp-kj2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tz2-nf-E8R" userLabel="Preview" customClass="PreviewView" customModule="iOS_10_Sampler" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3I-Cv-0xz">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joD-9E-fcI">
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="CAM-lD-q5d"/>
+                                            <constraint firstAttribute="width" constant="52" id="QYZ-hQ-Z36"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="26"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="joD-9E-fcI" firstAttribute="centerX" secondItem="a3I-Cv-0xz" secondAttribute="centerX" id="CNH-JU-aBu"/>
+                                    <constraint firstItem="joD-9E-fcI" firstAttribute="centerY" secondItem="a3I-Cv-0xz" secondAttribute="centerY" id="Qn6-6j-AMi"/>
+                                    <constraint firstAttribute="width" constant="64" id="pAr-sl-PZw"/>
+                                    <constraint firstAttribute="height" constant="64" id="xJj-eY-9JB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="32"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3FY-Qk-MPU" userLabel="Still">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="5o9-po-CAj"/>
+                                    <constraint firstAttribute="width" constant="48" id="OpM-QA-w2S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="capturePhoto:" destination="ZQk-vf-fdE" eventType="touchUpInside" id="bKb-Xq-QAe"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIVE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlJ-L1-EFt">
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="3a6-Dt-SY8"/>
+                                    <constraint firstAttribute="height" constant="25" id="EB0-vg-dZ4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tz2-nf-E8R" firstAttribute="top" secondItem="Sn5-Jp-kj2" secondAttribute="top" id="3bU-qu-gnV"/>
+                            <constraint firstItem="Wpf-AE-hdM" firstAttribute="top" secondItem="tz2-nf-E8R" secondAttribute="bottom" id="Emm-qT-cBg"/>
+                            <constraint firstItem="a3I-Cv-0xz" firstAttribute="centerX" secondItem="3FY-Qk-MPU" secondAttribute="centerX" id="GR2-Jw-B0w"/>
+                            <constraint firstItem="3FY-Qk-MPU" firstAttribute="centerX" secondItem="Sn5-Jp-kj2" secondAttribute="centerX" id="Ncq-ha-AZr"/>
+                            <constraint firstItem="DlJ-L1-EFt" firstAttribute="centerX" secondItem="Sn5-Jp-kj2" secondAttribute="centerX" id="ZwN-fO-EBW"/>
+                            <constraint firstItem="DlJ-L1-EFt" firstAttribute="top" secondItem="nrv-sQ-ezH" secondAttribute="bottom" constant="32" id="cRL-Jd-D1G"/>
+                            <constraint firstItem="a3I-Cv-0xz" firstAttribute="centerY" secondItem="3FY-Qk-MPU" secondAttribute="centerY" id="gXf-e5-HHn"/>
+                            <constraint firstItem="Wpf-AE-hdM" firstAttribute="top" secondItem="3FY-Qk-MPU" secondAttribute="bottom" constant="42" id="hBU-HT-nMg"/>
+                            <constraint firstAttribute="trailing" secondItem="tz2-nf-E8R" secondAttribute="trailing" id="mfJ-Lg-08u"/>
+                            <constraint firstItem="tz2-nf-E8R" firstAttribute="leading" secondItem="Sn5-Jp-kj2" secondAttribute="leading" id="znl-yq-Mzs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="capturingLivePhotoLabel" destination="DlJ-L1-EFt" id="FuI-2H-5XG"/>
+                        <outlet property="photoButton" destination="3FY-Qk-MPU" id="JQZ-Oh-CME"/>
+                        <outlet property="previewView" destination="tz2-nf-E8R" id="fhl-xj-fgi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NGF-Wj-Gwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="106" y="63"/>
+        </scene>
+    </scenes>
+</document>
