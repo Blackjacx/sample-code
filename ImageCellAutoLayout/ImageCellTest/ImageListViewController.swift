@@ -69,6 +69,8 @@ extension ImageListViewController: UITableViewDataSource {
 
         let url = imgURLs[indexPath.row]
         imgCell.configure(url, didConfigure: { [weak self] preferredCellHeight in
+
+            // Reload cell if the cells preferred height has changed
             if self?.cellHeightCache[indexPath] != preferredCellHeight {
                 self?.cellHeightCache[indexPath] = preferredCellHeight
                 tableView.beginUpdates()
