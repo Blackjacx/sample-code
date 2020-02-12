@@ -96,8 +96,6 @@ final class ImageCell: UITableViewCell {
 
     private lazy var imgView: UIImageView! = UIImageView()
 
-    private var imgViewHeight: NSLayoutConstraint!
-
     // MARK: - Initalization
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
