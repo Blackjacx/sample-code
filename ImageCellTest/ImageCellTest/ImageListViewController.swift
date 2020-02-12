@@ -12,7 +12,7 @@ final class ImageListViewController: UIViewController {
 
     private let imgURLs: [URL]
     private let table = UITableView()
-    private var cellHeights: [IndexPath : CGFloat] = [:]
+    private var cellHeightCache: [IndexPath : CGFloat] = [:]
 
     init(_ urls: [URL]) {
         self.imgURLs = urls
@@ -69,16 +69,18 @@ extension ImageListViewController: UITableViewDataSource {
 
         let url = imgURLs[indexPath.row]
         imgCell.configure(url) { [weak self] preferredCellHeight in
-            if self?.cellHeights[indexPath] != preferredCellHeight {
-                self?.cellHeights[indexPath] = preferredCellHeight
-                tableView.reloadData()
+            if self?.cellHeightCache[indexPath] != preferredCellHeight {
+                self?.cellHeightCache[indexPath] = preferredCellHeight
+                tableView.beginUpdates()
+                tableView.reloadRows(at: [indexPath], with: .fade)
+                tableView.endUpdates()
             }
         }
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        cellHeights[indexPath] ?? 0
+        cellHeightCache[indexPath] ?? 0
     }
 }
 
@@ -89,7 +91,7 @@ extension ImageListViewController: UITableViewDelegate {
 final class ImageCell: UITableViewCell {
 
     static let reuseID = "img_cell"
-    static let padding: CGFloat = 10
+    static let padding: CGFloat = 50
 
     private lazy var imgView: UIImageView! = UIImageView()
 
@@ -130,20 +132,21 @@ final class ImageCell: UITableViewCell {
             imgView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Self.padding),
             imgView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Self.padding),
             imgView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Self.padding),
-            imgView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: Self.padding)
+            imgView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Self.padding)
         ]
         NSLayoutConstraint.activate(constraints)
     }
 
     func configure(_ url: URL, completion: @escaping (_ preferredCellHeight: CGFloat) -> ()) {
 
-        imgView.setImage(from: url, didSetImage: { [weak self] img in
+        ImageFetcher.fetch(from: url, didFetchImage: { [weak self] img in
             guard let self = self else { return }
             let imgAspect = img.size.width / img.size.height
-            let imgViewWidth = self.contentView.frame.width
-            let imgViewHeight = imgViewWidth / imgAspect
+            let imgViewWidth = self.contentView.frame.width - 2 * Self.padding
+            let imgViewHeight = imgViewWidth / imgAspect - 2 * Self.padding
             print("(\(imgViewWidth), \(imgViewHeight), \(imgAspect))")
-            completion(imgViewHeight + Self.padding)
+            self.imgView.image = img
+            completion(imgViewHeight + 2 * Self.padding)
         })
     }
 }
