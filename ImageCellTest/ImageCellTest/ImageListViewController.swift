@@ -140,7 +140,7 @@ final class ImageCell: UITableViewCell {
 
         imgView.setImage(from: url, didSetImage: { [weak self] img in
             guard let self = self, let img = img else {
-                didConfigure(Self.paddingH)
+                didConfigure(Self.paddingV * 2)
                 return
             }
             let imgAspect = img.size.width / img.size.height
