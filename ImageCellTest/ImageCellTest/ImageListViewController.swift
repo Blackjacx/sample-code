@@ -31,11 +31,24 @@ final class ImageListViewController: UIViewController {
         table.delegate = self
         table.register(ImageCell.self, forCellReuseIdentifier: ImageCell.reuseID)
         view.addSubview(table)
+
+        setupAutoLayout()
+    }
+
+    private func setupAutoLayout() {
+
+        let padding: CGFloat = 0
+        let constraints: [NSLayoutConstraint] = [
+            table.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            table.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            table.topAnchor.constraint(equalTo: view.topAnchor, constant: padding),
+            table.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -padding),
+        ]
+        NSLayoutConstraint.activate(constraints)
     }
 }
 
 extension ImageListViewController: UITableViewDataSource {
-
     func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
@@ -55,6 +68,8 @@ extension ImageListViewController: UITableViewDataSource {
         imgCell.configure(url)
         return cell
     }
+
+
 }
 
 extension ImageListViewController: UITableViewDelegate {
