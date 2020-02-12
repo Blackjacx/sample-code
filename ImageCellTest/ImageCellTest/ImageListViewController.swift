@@ -147,7 +147,6 @@ final class ImageCell: UITableViewCell {
             let imgViewWidth = self.contentView.frame.width - 2 * Self.paddingH
             let imgViewHeight = imgViewWidth / imgAspect
             print("(\(imgViewWidth), \(imgViewHeight), \(imgAspect))")
-            self.imgView.image = img
             didConfigure(imgViewHeight + 2 * Self.paddingV)
         })
     }
