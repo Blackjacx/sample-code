@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Auth"
-AuthUserFile InsertFullPathToThePasswordFileInHere/stats/.htpasswd
-Require valid-user

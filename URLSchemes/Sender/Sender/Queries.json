@@ -1,0 +1,135 @@
+[
+    {
+        "title": "DBFFM • Create Ride • Departure • Far Future",
+        "scheme": "DBFFM",
+        "path": "create_ride",
+        "params": {
+            "origin_lat": 50.1217884,
+            "origin_lng": 8.6752636,
+            "destination_lat": 50.106529,
+            "destination_lng": 8.6621618,
+            "departure_time": "2500-08-01T13:00:00Z"
+        }
+    },
+    {
+        "title": "DBFFM • Create Ride • Departure • Near Future",
+        "scheme": "DBFFM",
+        "path": "create_ride",
+        "params": {
+            "origin_lat": 50.1217884,
+            "origin_lng": 8.6752636,
+            "destination_lat": 50.106529,
+            "destination_lng": 8.6621618,
+            "departure_time": "2019-07-26T13:00:00Z"
+        }
+    },
+    {
+        "title": "DBFFM • Create Ride • Arrival • Near Future",
+        "scheme": "DBFFM",
+        "path": "create_ride",
+        "params": {
+            "origin_lat": 50.1217884,
+            "origin_lng": 8.6752636,
+            "destination_lat": 50.106529,
+            "destination_lng": 8.6621618,
+            "arrival_time": "2019-07-26T13:00:00Z"
+        }
+    },
+    {
+        "title": "DBFFM • Create Ride • Departure • Past",
+        "scheme": "DBFFM",
+        "path": "create_ride",
+        "params": {
+            "origin_lat": 50.1217884,
+            "origin_lng": 8.6752636,
+            "destination_lat": 50.106529,
+            "destination_lng": 8.6621618,
+            "departure_time": "2018-07-26T13:00:00Z"
+        }
+    },
+    {
+        "title": "DBFFM • Create Ride • Different Origin",
+        "scheme": "DBFFM",
+        "path": "create_ride",
+        "params": {
+            "origin_lat": 50.1017884,
+            "origin_lng": 8.6752636,
+            "destination_lat": 50.106529,
+            "destination_lng": 8.6621618,
+            "departure_time": "2500-08-01T13:00:00Z"
+        }
+    },
+    {
+        "title": "DBFFM • Create Ride • Arrival & Departure • Far Future",
+        "scheme": "DBFFM",
+        "path": "create_ride",
+        "params": {
+            "origin_lat": 50.1217884,
+            "origin_lng": 8.6752636,
+            "destination_lat": 50.106529,
+            "destination_lng": 8.6621618,
+            "arrival_time": "2500-08-01T13:00:00Z",
+            "departure_time": "2500-08-01T13:00:00Z"
+        }
+    },
+    {
+        "title": "DBFFM • Create Ride • Out of Service Area",
+        "scheme": "DBFFM",
+        "path": "create_ride",
+        "params": {
+            "origin_lat": 50.11264,
+            "origin_lng": 8.7058128,
+            "destination_lat": 50.106529,
+            "destination_lng": 8.6621618,
+            "departure_time": "2500-08-01T13:00:00Z"
+        }
+    },
+    {
+        "title": "SWKKrefeld • Create Ride • Departure • Far Future",
+        "scheme": "SWKKrefeld",
+        "path": "create_ride",
+        "params": {
+            "origin_lat": 51.3303095,
+            "origin_lng": 6.5708441,
+            "destination_lat": 51.3259921,
+            "destination_lng": 6.5671748,
+            "departure_time": "2500-08-01T13:00:00Z"
+        }
+    },
+    {
+        "title": "SWKKrefeld • Create Ride • Arrival • Far Future",
+        "scheme": "SWKKrefeld",
+        "path": "create_ride",
+        "params": {
+            "origin_lat": 51.3303095,
+            "origin_lng": 6.5708441,
+            "destination_lat": 51.3259921,
+            "destination_lng": 6.5671748,
+            "departure_time": "2500-08-01T13:00:00Z"
+        }
+    },
+    {
+        "title": "DBPaderborn • Create Ride • Departure • Far Future",
+        "scheme": "DBPaderborn",
+        "path": "create_ride",
+        "params": {
+            "origin_lat": 51.610293,
+            "origin_lng": 8.619962,
+            "destination_lat": 51.7127396,
+            "destination_lng": 8.7363564,
+            "departure_time": "2500-08-01T13:00:00Z"
+        }
+    },
+    {
+        "title": "Invalid Scheme",
+        "scheme": "UNKNOWN",
+        "path": "create_ride",
+        "params": {
+                "origin_lat": 50.11490254,
+                "origin_lng": 8.68187606,
+                "destination_lat": 50.106529,
+                "destination_lng": 8.6621618,
+                "departure_time": "2500-08-01T13:00:00Z"
+        }
+    }
+]
