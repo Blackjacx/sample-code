@@ -11,8 +11,8 @@ import UIKit
 final class ImageListViewController: UIViewController {
 
     private let imgURLs: [URL]
-
     private let table = UITableView()
+    private var cellHeights: [IndexPath : CGFloat] = [:]
 
     init(_ urls: [URL]) {
         self.imgURLs = urls
@@ -26,14 +26,16 @@ final class ImageListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTable()
+        setupAutoLayout()
+    }
 
+    private func setupTable() {
         table.dataSource = self
         table.delegate = self
         table.register(ImageCell.self, forCellReuseIdentifier: ImageCell.reuseID)
         table.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(table)
-
-        setupAutoLayout()
     }
 
     private func setupAutoLayout() {
@@ -66,11 +68,18 @@ extension ImageListViewController: UITableViewDataSource {
         }
 
         let url = imgURLs[indexPath.row]
-        imgCell.configure(url)
+        imgCell.configure(url) { [weak self] preferredCellHeight in
+            if self?.cellHeights[indexPath] != preferredCellHeight {
+                self?.cellHeights[indexPath] = preferredCellHeight
+                tableView.reloadData()
+            }
+        }
         return cell
     }
 
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        cellHeights[indexPath] ?? 0
+    }
 }
 
 extension ImageListViewController: UITableViewDelegate {
@@ -80,8 +89,11 @@ extension ImageListViewController: UITableViewDelegate {
 final class ImageCell: UITableViewCell {
 
     static let reuseID = "img_cell"
+    static let padding: CGFloat = 10
 
-    private let imgView = UIImageView()
+    private lazy var imgView: UIImageView! = UIImageView()
+
+    private var imgViewHeight: NSLayoutConstraint!
 
     // MARK: - Initalization
 
@@ -105,26 +117,33 @@ final class ImageCell: UITableViewCell {
 
         imgView.backgroundColor = .systemBackground
         imgView.contentMode = .scaleAspectFit
-        imgView.tintColor = .label
-        imgView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(imgView)
+
+        if imgView.superview == nil {
+            imgView.translatesAutoresizingMaskIntoConstraints = false
+            contentView.addSubview(imgView)
+        }
     }
 
     private func setupAutoLayout() {
 
-        let padding: CGFloat = 10
         let constraints: [NSLayoutConstraint] = [
-            imgView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
-            imgView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
-            imgView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
-            imgView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding),
-            imgView.heightAnchor.constraint(equalTo: imgView.widthAnchor)
+            imgView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Self.padding),
+            imgView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Self.padding),
+            imgView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Self.padding),
+            imgView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: Self.padding)
         ]
         NSLayoutConstraint.activate(constraints)
     }
 
-    func configure(_ url: URL) {
+    func configure(_ url: URL, completion: @escaping (_ preferredCellHeight: CGFloat) -> ()) {
 
-        imgView.setImage(from: url)
+        imgView.setImage(from: url, didSetImage: { [weak self] img in
+            guard let self = self else { return }
+            let imgAspect = img.size.width / img.size.height
+            let imgViewWidth = self.contentView.frame.width
+            let imgViewHeight = imgViewWidth / imgAspect
+            print("(\(imgViewWidth), \(imgViewHeight), \(imgAspect))")
+            completion(imgViewHeight + Self.padding)
+        })
     }
 }

@@ -19,7 +19,7 @@ extension UIImageView {
         return URLSession(configuration: config)
     }()
 
-    func setImage(from url: URL?, placeholder: UIImage? = nil, session: URLSession? = nil) {
+    func setImage(from url: URL?, placeholder: UIImage? = nil, session: URLSession? = nil, didSetImage: @escaping (UIImage)->()) {
 
         // Update session
         if let session = session {
@@ -29,12 +29,14 @@ extension UIImageView {
         // Try to find cached image
         if let url = url, let cachedImage = UIImageView.cache[url] {
             self.image = cachedImage
+            didSetImage(cachedImage)
             return
         }
 
         // Set placeholder image to bridge loading
         if let placeholder = placeholder {
             self.image = placeholder
+            didSetImage(placeholder)
         }
 
         // Load new image from backend
@@ -44,11 +46,12 @@ extension UIImageView {
 
             guard let data = data else { return }
 
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
 
                 guard let image = UIImage(data: data) else { return }
                 UIImageView.cache[url] = image
                 self?.image = image
+                didSetImage(image)
             }
         }.resume()
     }
