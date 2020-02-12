@@ -30,6 +30,7 @@ final class ImageListViewController: UIViewController {
         table.dataSource = self
         table.delegate = self
         table.register(ImageCell.self, forCellReuseIdentifier: ImageCell.reuseID)
+        table.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(table)
 
         setupAutoLayout()
