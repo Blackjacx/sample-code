@@ -68,14 +68,14 @@ extension ImageListViewController: UITableViewDataSource {
         }
 
         let url = imgURLs[indexPath.row]
-        imgCell.configure(url) { [weak self] preferredCellHeight in
+        imgCell.configure(url, didConfigure: { [weak self] preferredCellHeight in
             if self?.cellHeightCache[indexPath] != preferredCellHeight {
                 self?.cellHeightCache[indexPath] = preferredCellHeight
                 tableView.beginUpdates()
                 tableView.reloadRows(at: [indexPath], with: .fade)
                 tableView.endUpdates()
             }
-        }
+        })
         return cell
     }
 
@@ -91,7 +91,8 @@ extension ImageListViewController: UITableViewDelegate {
 final class ImageCell: UITableViewCell {
 
     static let reuseID = "img_cell"
-    static let padding: CGFloat = 50
+    static let paddingV: CGFloat = 25
+    static let paddingH: CGFloat = 50
 
     private lazy var imgView: UIImageView! = UIImageView()
 
@@ -129,24 +130,27 @@ final class ImageCell: UITableViewCell {
     private func setupAutoLayout() {
 
         let constraints: [NSLayoutConstraint] = [
-            imgView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Self.padding),
-            imgView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Self.padding),
-            imgView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Self.padding),
-            imgView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Self.padding)
+            imgView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Self.paddingH),
+            imgView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Self.paddingH),
+            imgView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Self.paddingV),
+            imgView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Self.paddingV)
         ]
         NSLayoutConstraint.activate(constraints)
     }
 
-    func configure(_ url: URL, completion: @escaping (_ preferredCellHeight: CGFloat) -> ()) {
+    func configure(_ url: URL, didConfigure: @escaping (_ preferredCellHeight: CGFloat) -> ()) {
 
-        ImageFetcher.fetch(from: url, didFetchImage: { [weak self] img in
-            guard let self = self else { return }
+        imgView.setImage(from: url, didSetImage: { [weak self] img in
+            guard let self = self, let img = img else {
+                didConfigure(Self.paddingH)
+                return
+            }
             let imgAspect = img.size.width / img.size.height
-            let imgViewWidth = self.contentView.frame.width - 2 * Self.padding
-            let imgViewHeight = imgViewWidth / imgAspect - 2 * Self.padding
+            let imgViewWidth = self.contentView.frame.width - 2 * Self.paddingH
+            let imgViewHeight = imgViewWidth / imgAspect
             print("(\(imgViewWidth), \(imgViewHeight), \(imgAspect))")
             self.imgView.image = img
-            completion(imgViewHeight + 2 * Self.padding)
+            didConfigure(imgViewHeight + 2 * Self.paddingV)
         })
     }
 }

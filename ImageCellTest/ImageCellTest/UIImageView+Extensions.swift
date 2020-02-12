@@ -1,5 +1,5 @@
 //
-//  ImageFetcher.swift
+//  UIImageView+Extensions.swift
 //  ImageCellTest
 //
 //  Created by Stefan Herold on 12.02.20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct ImageFetcher {
+extension UIImageView {
 
     private static var cache: [URL: UIImage] = [:]
     private static var session: URLSessionProtocol = {
@@ -18,7 +18,7 @@ struct ImageFetcher {
         return URLSession(configuration: config)
     }()
 
-    static func fetch(from url: URL?, placeholder: UIImage? = nil, session: URLSessionProtocol? = nil, didFetchImage: @escaping (UIImage)->()) {
+    func setImage(from url: URL?, placeholder: UIImage? = nil, session: URLSessionProtocol? = nil, didSetImage: @escaping (UIImage?)->()) {
 
         // Update session
         if let session = session {
@@ -27,9 +27,14 @@ struct ImageFetcher {
 
         // Try to find cached image
         if let url = url, let cachedImage = Self.cache[url] {
-            didFetchImage(cachedImage)
+            self.image = cachedImage
+            didSetImage(cachedImage)
             return
         }
+
+        // Set image to placeholder or nil and report that change
+        self.image = placeholder
+        didSetImage(placeholder)
 
         // Load new image from backend
         guard let url = url else { return }
@@ -42,7 +47,8 @@ struct ImageFetcher {
 
                 guard let image = UIImage(data: data) else { return }
                 Self.cache[url] = image
-                didFetchImage(image)
+                self.image = image
+                didSetImage(image)
             }
         }.resume()
     }

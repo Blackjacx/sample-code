@@ -15,8 +15,8 @@
 		B907052323F3EFED00694219 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B907052123F3EFED00694219 /* LaunchScreen.storyboard */; };
 		B907052E23F3EFED00694219 /* ImageCellTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B907052D23F3EFED00694219 /* ImageCellTestTests.swift */; };
 		B907053923F3F00300694219 /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B907053823F3F00300694219 /* ImageListViewController.swift */; };
-		B9B92AF323F454B000FB5E9C /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B92AF223F454B000FB5E9C /* ImageFetcher.swift */; };
 		B9B92AF523F4554C00FB5E9C /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B92AF423F4554C00FB5E9C /* URLSessionProtocol.swift */; };
+		B9B92AF723F4675700FB5E9C /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B92AF623F4675700FB5E9C /* UIImageView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +42,8 @@
 		B907052D23F3EFED00694219 /* ImageCellTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellTestTests.swift; sourceTree = "<group>"; };
 		B907052F23F3EFED00694219 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B907053823F3F00300694219 /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
-		B9B92AF223F454B000FB5E9C /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 		B9B92AF423F4554C00FB5E9C /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		B9B92AF623F4675700FB5E9C /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,10 +87,10 @@
 			children = (
 				B907052423F3EFED00694219 /* Info.plist */,
 				B907051623F3EFEB00694219 /* AppDelegate.swift */,
-				B9B92AF223F454B000FB5E9C /* ImageFetcher.swift */,
 				B907053823F3F00300694219 /* ImageListViewController.swift */,
 				B907051823F3EFEB00694219 /* SceneDelegate.swift */,
 				B9B92AF423F4554C00FB5E9C /* URLSessionProtocol.swift */,
+				B9B92AF623F4675700FB5E9C /* UIImageView+Extensions.swift */,
 				B907051A23F3EFEB00694219 /* ViewController.swift */,
 				B907051F23F3EFED00694219 /* Assets.xcassets */,
 				B907052123F3EFED00694219 /* LaunchScreen.storyboard */,
@@ -210,11 +210,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9B92AF523F4554C00FB5E9C /* URLSessionProtocol.swift in Sources */,
+				B9B92AF723F4675700FB5E9C /* UIImageView+Extensions.swift in Sources */,
 				B907051B23F3EFEB00694219 /* ViewController.swift in Sources */,
 				B907051723F3EFEB00694219 /* AppDelegate.swift in Sources */,
 				B907053923F3F00300694219 /* ImageListViewController.swift in Sources */,
 				B907051923F3EFEB00694219 /* SceneDelegate.swift in Sources */,
-				B9B92AF323F454B000FB5E9C /* ImageFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
